@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-22T12:55:37Z",
+  "title": "Design System: Apple Property Group AG",
+  "extensions": {
+    "colorMeta": {
+      "weathered-rose-gold": { "role": "primary", "displayName": "Weathered Rose Gold", "canonical": "#9a5c4a", "tonalRamp": ["#2c1a14", "#4a2c22", "#6b3f31", "#9a5c4a", "#b47c66", "#cda090", "#e4c6ba", "#f3e5de"] },
+      "weathered-rose-gold-deep": { "role": "primary-hover", "displayName": "Weathered Rose Gold Deep", "canonical": "#7a4839", "tonalRamp": ["#221310", "#3a221b", "#573327", "#7a4839", "#96604e", "#b6836f", "#d3ab9c", "#ecd6cb"] },
+      "rose-gold-blush": { "role": "primary-tint", "displayName": "Rose Gold Blush", "canonical": "#f3e5de" },
+      "paper-white": { "role": "neutral-bg", "displayName": "Paper White", "canonical": "#ffffff" },
+      "warm-linen": { "role": "neutral-bg-alt", "displayName": "Warm Linen", "canonical": "#f6f2ef" },
+      "warm-linen-line": { "role": "neutral-border", "displayName": "Warm Linen Line", "canonical": "#e6ded8" },
+      "espresso-ink": { "role": "neutral-text", "displayName": "Espresso Ink", "canonical": "#1c1714" },
+      "warm-taupe": { "role": "neutral-text-muted", "displayName": "Warm Taupe", "canonical": "#5b524c" },
+      "espresso-charcoal": { "role": "neutral-bg-dark", "displayName": "Espresso Charcoal", "canonical": "#1c1512" },
+      "espresso-charcoal-raised": { "role": "neutral-bg-dark-alt", "displayName": "Espresso Charcoal Raised", "canonical": "#251c18" },
+      "espresso-line": { "role": "neutral-border-dark", "displayName": "Espresso Line", "canonical": "#362a24" },
+      "linen-mist": { "role": "neutral-text-on-dark", "displayName": "Linen Mist", "canonical": "#f5f1ee" },
+      "taupe-mist": { "role": "neutral-text-on-dark-muted", "displayName": "Taupe Mist", "canonical": "#bdb0a8" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Titillium Web Display", "purpose": "H1/H2 headlines, weight 700 to 900, tight tracking." },
+      "body": { "displayName": "Inter Body", "purpose": "Running text, form fields, navigation, captions." }
+    },
+    "shadows": [
+      { "name": "header-scrolled", "value": "0 8px 30px -12px rgba(0,0,0,0.12)", "purpose": "Sticky header once the page has scrolled past the top." },
+      { "name": "dropdown-panel", "value": "0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1)", "purpose": "Open navigation submenus and mega-menu panels." },
+      { "name": "hero-framed-image", "value": "0 30px 80px -30px rgba(0,0,0,0.35)", "purpose": "The framed photo in the split-layout hero variant." }
+    ],
+    "motion": [
+      { "name": "ease-einblenden", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Fade-and-rise-in for hero text and scroll-triggered cards." },
+      { "name": "duration-einblenden-load", "value": "0.7s", "purpose": "Above-the-fold fade-in on page load (hero)." },
+      { "name": "duration-einblenden-scroll", "value": "0.75s", "purpose": "Scroll-triggered fade-in for cards and section heads, staggered 90ms per grid column." },
+      { "name": "duration-image-hover", "value": "0.7s", "purpose": "Card image zoom on hover." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" },
+      { "name": "2xl", "value": "1536px" },
+      { "name": "3xl", "value": "2200px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main call to action, e.g. \"Anfrage senden\", \"Immobilien erkunden\".",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Anfrage senden</a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 56px; padding: 14px 28px; background: #9a5c4a; color: #ffffff; font-family: Inter, sans-serif; font-weight: 600; font-size: 1rem; border-radius: 4px; text-decoration: none; transition: background-color 0.2s; } .ds-btn-primary:hover { background: #7a4839; } .ds-btn-primary:focus-visible { outline: 3px solid #9a5c4a; outline-offset: 3px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Secondary action next to a primary button, on light backgrounds only.",
+      "html": "<a class=\"ds-btn-secondary\" href=\"#\">Alle Projekte</a>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 56px; padding: 14px 28px; background: transparent; color: #1c1714; font-family: Inter, sans-serif; font-weight: 600; font-size: 1rem; border: 1px solid currentColor; border-radius: 4px; text-decoration: none; transition: background-color 0.2s, color 0.2s; } .ds-btn-secondary:hover { background: #1c1714; color: #ffffff; }"
+    },
+    {
+      "name": "Project Card",
+      "kind": "card",
+      "refersTo": "project-card",
+      "description": "Referenz/project tile used in grids on the homepage and the projects overview.",
+      "html": "<article class=\"ds-card\"><div class=\"ds-card-media\"><img src=\"https://placehold.co/480x360\" alt=\"\" /></div><div class=\"ds-card-meta\"><span class=\"ds-card-tag\">Neubau</span><span>Kreuzlingen</span><span>August 2026</span></div><h3 class=\"ds-card-title\">Kreuzlingen</h3><p class=\"ds-card-text\">Neubauprojekt der Apple Property Group AG in Kreuzlingen mit Seeblick.</p></article>",
+      "css": ".ds-card { display: flex; flex-direction: column; font-family: Inter, sans-serif; } .ds-card-media { position: relative; aspect-ratio: 4 / 3; border-radius: 6px; overflow: hidden; background: #f6f2ef; } .ds-card-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); } .ds-card:hover .ds-card-media img { transform: scale(1.04); } .ds-card-meta { display: flex; flex-wrap: wrap; gap: 4px 12px; margin-top: 20px; font-size: 0.875rem; color: #5b524c; } .ds-card-tag { color: #9a5c4a; font-weight: 600; } .ds-card-title { margin-top: 8px; font-family: 'Titillium Web', sans-serif; font-weight: 600; font-size: 1.25rem; color: #1c1714; } .ds-card-text { margin-top: 8px; color: #5b524c; line-height: 1.6; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Contact form text field.",
+      "html": "<div class=\"ds-field\"><label class=\"ds-label\" for=\"ds-name\">Vorname und Name *</label><input class=\"ds-input\" id=\"ds-name\" type=\"text\" placeholder=\"\" /></div>",
+      "css": ".ds-field { display: flex; flex-direction: column; font-family: Inter, sans-serif; } .ds-label { margin-bottom: 8px; font-size: 0.875rem; font-weight: 600; color: #1c1714; } .ds-input { width: 100%; padding: 12px 16px; background: #ffffff; border: 1px solid #e6ded8; border-radius: 6px; font-size: 1rem; color: #1c1714; outline: none; transition: border-color 0.2s, box-shadow 0.2s; } .ds-input::placeholder { color: rgba(91, 82, 76, 0.7); } .ds-input:focus { border-color: #9a5c4a; box-shadow: 0 0 0 2px rgba(154, 92, 74, 0.25); }"
+    },
+    {
+      "name": "Header Nav Link",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Primary navigation link, default and active state.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link\" href=\"#\">Projekte</a><a class=\"ds-nav-link ds-nav-link--active\" href=\"#\">Über uns</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 24px; font-family: Inter, sans-serif; } .ds-nav-link { padding: 8px 12px; border-radius: 6px; font-size: 0.95rem; font-weight: 500; color: #1c1714; text-decoration: none; transition: color 0.2s; } .ds-nav-link:hover, .ds-nav-link--active { color: #9a5c4a; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Quiet Rose Gold",
+    "overview": "The site reads like a well-run, owner-led business, not a real-estate brochure. Rose gold is a rare, precise accent, never a wash: one button, one line under an eyebrow label, one hover state at a time. Everything else sits on paper white or a warm linen tint, set in a crisp, no-nonsense grid that lets the actual project photography (real renders and real rooms, never stock) carry the emotional weight. Corners are barely rounded, shadows only appear as a response to scrolling or hovering, and nothing glows, gradients only exist to keep white hero text readable over a photo.\n\nConfirmed anti-reference: a generic glossy real-estate broker site, stock-photo families, exclamation-mark sales copy, and glossy colour gradients as decoration. This system explicitly rejects all of that.",
+    "keyCharacteristics": [
+      "One accent colour (Weathered Rose Gold) used sparingly, never as a background wash",
+      "Flat-by-default surfaces; shadows appear only on hover, scroll, or open state",
+      "Very shallow corner radii (4 to 6px), \"angular, not playful\"",
+      "A very wide content column (max 2400px) instead of a boxed 1280px layout",
+      "Real project photography full-bleed in heroes and cards, no illustration, no stock imagery"
+    ],
+    "rules": [
+      { "name": "The One Accent Rule", "body": "Weathered Rose Gold appears as a fill on at most one element per view (the primary button or the active nav state). Everywhere else it is a line, a label, or a hover colour, never a block of colour behind a whole section.", "section": "colors" },
+      { "name": "The Hyphenation Rule", "body": "Long compound German words are allowed to hyphenate on narrow screens instead of overflowing; this is load-bearing for German-language headlines and must not be turned off.", "section": "typography" },
+      { "name": "The Response-Only Shadow Rule", "body": "A shadow only ever appears because of scroll position, hover, or an open/closed state. No card, button, or section carries a shadow at rest.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep Weathered Rose Gold to one filled element per screen; everywhere else use it as a line, label, or hover state (The One Accent Rule).",
+      "Do use real project photography full-bleed in heroes and cards; never stock photography or illustration.",
+      "Do keep radii shallow (4px buttons, 6px cards); never jump to fully rounded (\"pill\") buttons or large rounded-2xl cards.",
+      "Do let shadows appear only in response to scroll, hover, or open state (The Response-Only Shadow Rule).",
+      "Do keep the content wrapper at up to 2400px; a narrower, centred 1280px container is the generic-template look this system exists to avoid."
+    ],
+    "donts": [
+      "Don't fill a whole section, card, or hero background with the accent colour; it reads as a coupon banner, not a developer's site.",
+      "Don't add drop shadows, glows, or gradients as decoration; the only permitted gradient is the black overlay behind hero text on a photo.",
+      "Don't write sales-brochure copy (exclamation marks, \"Jetzt anfragen!\", superlatives); the tone is Swiss-German, factual, and trustworthy, matching PRODUCT.md's voice commitment.",
+      "Don't invent stats, testimonials, or team photos that are not confirmed; empty states (no photo) render a plain outline person icon, never a placeholder stock headshot."
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "titel": "Kontakt",
+  "inSitemap": true,
+  "seo": {
+    "titel": "Kontakt",
+    "beschreibung": "Kontaktieren Sie die Apple Property Group AG in Tägerwilen für Fragen zu Kauf, Verkauf oder Vermietung von Immobilien."
+  },
+  "bloecke": [
+    {
+      "discriminant": "kontaktformular",
+      "value": {
+        "titel": "Haben Sie ein Projekt im Sinn?",
+        "text": "Schildern Sie uns kurz Ihr Anliegen. Wir melden uns bei Ihnen.",
+        "betreffOptionen": [
+          "Kaufinteresse",
+          "Verkauf einer Immobilie",
+          "Vermietung",
+          "Allgemeine Frage"
+        ],
+        "bestaetigung": "Wir haben Ihre Anfrage erhalten und melden uns bei Ihnen.",
+        "kontaktdatenZeigen": true
+      }
+    }
+  ]
+}
