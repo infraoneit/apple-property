@@ -20,24 +20,28 @@ export function rasterFuerKacheln(anzahl: number) {
   return cn('grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8', vier && '2xl:grid-cols-4');
 }
 
+/** Jedes Projekt liegt wie ein einzelnes Stück in seiner eigenen Vitrine: gerahmt, mit einem Lichtkreis dahinter. */
 export function ReferenzKarte({ referenz: r, titelEbene = 'h3', sizes = KARTEN_SIZES }: { referenz: Referenz; titelEbene?: Ebene; sizes?: string }) {
   const Titel = titelEbene;
   return (
     <article data-einblenden className="group relative flex flex-col">
-      <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-karte)] bg-flaeche">
-        <Image src={r.titelbild} alt={r.titelbildAlt} fill sizes={sizes} className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]" />
+      <div className="relative aspect-[4/3]">
+        <div className="vitrine-licht opacity-70 transition-opacity duration-500 group-hover:opacity-100" />
+        <div className="vitrine-rahmen h-full">
+          <Image src={r.titelbild} alt={r.titelbildAlt} fill sizes={sizes} className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]" />
+        </div>
       </div>
-      <div className="mt-5 flex min-h-10 flex-wrap items-center gap-x-3 gap-y-1 text-sm text-text-leise">
-        {r.kategorie ? <span className="font-semibold text-marke">{r.kategorie}</span> : null}
+      <div className="mt-5 flex min-h-10 flex-wrap items-center gap-x-3 gap-y-1 text-sm text-text-hell-leise">
+        {r.kategorie ? <span className="font-semibold text-gold">{r.kategorie}</span> : null}
         {r.ort ? <span>{r.ort}</span> : null}
         {r.datum ? <span>{monatJahr(r.datum)}</span> : null}
       </div>
-      <Titel className="titel-3 mt-2">
+      <Titel className="titel-3 mt-2 text-text-hell">
         <Link href={`/referenzen/${r.slug}`} className="after:absolute after:inset-0">
           {sauberText(r.titel)}
         </Link>
       </Titel>
-      <p className="mt-2 line-clamp-3 text-text-leise">{sauberText(r.kurzbeschreibung)}</p>
+      <p className="mt-2 line-clamp-3 text-text-hell-leise">{sauberText(r.kurzbeschreibung)}</p>
     </article>
   );
 }
@@ -59,7 +63,7 @@ export function LeistungKarte({ leistung: l, titelEbene = 'h3', sizes = KARTEN_S
           </Link>
         </Titel>
         <p className="mt-3 flex-1 text-text-leise">{sauberText(l.kurzbeschreibung)}</p>
-        <span className="mt-6 inline-flex items-center gap-2 font-semibold text-marke" aria-hidden>
+        <span className="mt-6 inline-flex items-center gap-2 font-semibold text-akzent" aria-hidden>
           Zur Leistung
           <ArrowRight className="size-5 transition-transform group-hover:translate-x-1" />
         </span>
@@ -74,7 +78,7 @@ export function JobZeile({ job: j, titelEbene = 'h3' }: { job: Job; titelEbene?:
     <article data-einblenden className="group relative grid gap-4 border-b border-linie py-7 transition-colors md:grid-cols-[1fr_auto] md:items-center md:gap-10 lg:py-8">
       <div>
         <Titel className="titel-3">
-          <Link href={`/jobs/${j.slug}`} className="after:absolute after:inset-0 group-hover:text-marke">
+          <Link href={`/jobs/${j.slug}`} className="after:absolute after:inset-0 group-hover:text-akzent">
             {sauberText(j.titel)}
           </Link>
         </Titel>
@@ -89,7 +93,7 @@ export function JobZeile({ job: j, titelEbene = 'h3' }: { job: Job; titelEbene?:
           <MapPin className="size-4" aria-hidden />
           {j.arbeitsort}
         </span>
-        <ArrowRight className="hidden size-6 text-marke transition-transform group-hover:translate-x-1 md:block" aria-hidden />
+        <ArrowRight className="hidden size-6 text-akzent transition-transform group-hover:translate-x-1 md:block" aria-hidden />
       </div>
     </article>
   );

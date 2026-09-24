@@ -1,37 +1,39 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-22T12:55:37Z",
+  "generatedAt": "2026-09-22T15:14:09Z",
   "title": "Design System: Apple Property Group AG",
   "extensions": {
     "colorMeta": {
-      "weathered-rose-gold": { "role": "primary", "displayName": "Weathered Rose Gold", "canonical": "#9a5c4a", "tonalRamp": ["#2c1a14", "#4a2c22", "#6b3f31", "#9a5c4a", "#b47c66", "#cda090", "#e4c6ba", "#f3e5de"] },
-      "weathered-rose-gold-deep": { "role": "primary-hover", "displayName": "Weathered Rose Gold Deep", "canonical": "#7a4839", "tonalRamp": ["#221310", "#3a221b", "#573327", "#7a4839", "#96604e", "#b6836f", "#d3ab9c", "#ecd6cb"] },
-      "rose-gold-blush": { "role": "primary-tint", "displayName": "Rose Gold Blush", "canonical": "#f3e5de" },
-      "paper-white": { "role": "neutral-bg", "displayName": "Paper White", "canonical": "#ffffff" },
-      "warm-linen": { "role": "neutral-bg-alt", "displayName": "Warm Linen", "canonical": "#f6f2ef" },
-      "warm-linen-line": { "role": "neutral-border", "displayName": "Warm Linen Line", "canonical": "#e6ded8" },
-      "espresso-ink": { "role": "neutral-text", "displayName": "Espresso Ink", "canonical": "#1c1714" },
-      "warm-taupe": { "role": "neutral-text-muted", "displayName": "Warm Taupe", "canonical": "#5b524c" },
-      "espresso-charcoal": { "role": "neutral-bg-dark", "displayName": "Espresso Charcoal", "canonical": "#1c1512" },
-      "espresso-charcoal-raised": { "role": "neutral-bg-dark-alt", "displayName": "Espresso Charcoal Raised", "canonical": "#251c18" },
-      "espresso-line": { "role": "neutral-border-dark", "displayName": "Espresso Line", "canonical": "#362a24" },
-      "linen-mist": { "role": "neutral-text-on-dark", "displayName": "Linen Mist", "canonical": "#f5f1ee" },
-      "taupe-mist": { "role": "neutral-text-on-dark-muted", "displayName": "Taupe Mist", "canonical": "#bdb0a8" }
+      "marke": { "role": "brand-fixed", "displayName": "Signet-Braun", "canonical": "#9a5c4a" },
+      "marke-dunkel": { "role": "brand-fixed-hover", "displayName": "Signet-Braun Dunkel", "canonical": "#7a4839" },
+      "marke-hell": { "role": "brand-fixed-tint", "displayName": "Signet-Braun Blush", "canonical": "#f3e5de" },
+      "gold": { "role": "stage-fixed", "displayName": "Blattgold", "canonical": "#cda27a", "tonalRamp": ["#2a1d12", "#4a3320", "#6e4c2f", "#8f6540", "#b08052", "#cda27a", "#dfc0a0", "#efdec6"] },
+      "gold-dunkel": { "role": "stage-fixed-hover", "displayName": "Blattgold Dunkel", "canonical": "#a97f56" },
+      "akzent": { "role": "theme-accent", "displayName": "Akzent (Blattgold im Dunkelmodus, Standard)", "canonical": "#cda27a", "lightModeOverride": "#9a5c4a" },
+      "akzent-dunkel": { "role": "theme-accent-hover", "displayName": "Akzent Hover", "canonical": "#a97f56", "lightModeOverride": "#7a4839" },
+      "grund": { "role": "theme-bg", "displayName": "Grund (dunkel, Standard)", "canonical": "#2c2319", "lightModeOverride": "#ffffff" },
+      "flaeche": { "role": "theme-bg-alt", "displayName": "Fläche (dunkel, Standard)", "canonical": "#352a20", "lightModeOverride": "#faf6f0" },
+      "linie": { "role": "theme-border", "displayName": "Linie (dunkel, Standard)", "canonical": "#4c3b2c", "lightModeOverride": "#e6ded8" },
+      "text": { "role": "theme-text", "displayName": "Text (dunkel, Standard)", "canonical": "#f3ece3", "lightModeOverride": "#1c1714" },
+      "text-leise": { "role": "theme-text-muted", "displayName": "Text Leise (dunkel, Standard)", "canonical": "#a8927c", "lightModeOverride": "#5b524c" },
+      "flaeche-dunkel": { "role": "stage-bg-fixed", "displayName": "Vitrinen-Samt", "canonical": "#100b08" },
+      "flaeche-dunkel-2": { "role": "stage-bg-fixed-alt", "displayName": "Vitrinen-Samt Erhöht", "canonical": "#15100d", "lightModeOverride": "#1d1712" },
+      "linie-dunkel": { "role": "stage-border-fixed", "displayName": "Vitrinen-Linie", "canonical": "#2c2119" },
+      "text-hell": { "role": "stage-text-fixed", "displayName": "Text Creme", "canonical": "#f3ece3" },
+      "text-hell-leise": { "role": "stage-text-fixed-muted", "displayName": "Text Creme Leise", "canonical": "#a8927c" }
     },
     "typographyMeta": {
-      "display": { "displayName": "Titillium Web Display", "purpose": "H1/H2 headlines, weight 700 to 900, tight tracking." },
-      "body": { "displayName": "Inter Body", "purpose": "Running text, form fields, navigation, captions." }
+      "display": { "displayName": "Cormorant Display", "purpose": "H1/H2/H3-Überschriften, gravierte Serife, nie für Fliesstext." },
+      "body": { "displayName": "Inter Body", "purpose": "Fliesstext, Formulare, Navigation, Beschriftungen." }
     },
     "shadows": [
-      { "name": "header-scrolled", "value": "0 8px 30px -12px rgba(0,0,0,0.12)", "purpose": "Sticky header once the page has scrolled past the top." },
-      { "name": "dropdown-panel", "value": "0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1)", "purpose": "Open navigation submenus and mega-menu panels." },
-      { "name": "hero-framed-image", "value": "0 30px 80px -30px rgba(0,0,0,0.35)", "purpose": "The framed photo in the split-layout hero variant." }
+      { "name": "vitrine-rahmen-schatten", "value": "0 0 0 1px rgba(0,0,0,0.4) inset, 0 40px 100px -30px rgba(0,0,0,0.7)", "purpose": "Hebt den goldgerahmten Bildkasten vom Samt ab." },
+      { "name": "header-scrolled", "value": "0 8px 30px -12px rgba(0,0,0,0.15)", "purpose": "Kopfzeile nach dem Scrollen." }
     ],
     "motion": [
-      { "name": "ease-einblenden", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Fade-and-rise-in for hero text and scroll-triggered cards." },
-      { "name": "duration-einblenden-load", "value": "0.7s", "purpose": "Above-the-fold fade-in on page load (hero)." },
-      { "name": "duration-einblenden-scroll", "value": "0.75s", "purpose": "Scroll-triggered fade-in for cards and section heads, staggered 90ms per grid column." },
-      { "name": "duration-image-hover", "value": "0.7s", "purpose": "Card image zoom on hover." }
+      { "name": "ease-vitrine", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Einblenden von Hero-Text und Vitrinen beim Laden." },
+      { "name": "duration-vitrine-licht", "value": "0.9s", "purpose": "Lichtschimmer-Einblendung beim Laden (vitrine-licht Keyframe)." },
+      { "name": "duration-card-hover", "value": "0.5s", "purpose": "Lichtkreis-Verstaerkung bei Projektkarten im Hover (bereits im Ruhezustand sichtbar, seit dem Polish-Durchgang vom 23. September 2026)." }
     ],
     "breakpoints": [
       { "name": "sm", "value": "640px" },
@@ -43,73 +45,91 @@
   },
   "components": [
     {
+      "name": "Vitrinen-Rahmen (Projektbild)",
+      "kind": "card",
+      "refersTo": "vitrine-rahmen",
+      "description": "Jedes Projektbild liegt gerahmt und beleuchtet auf dunklem Samt, wie ein Stück in einer Vitrine.",
+      "html": "<div class=\"ds-vitrine\"><div class=\"ds-vitrine-licht\"></div><div class=\"ds-vitrine-rahmen\"><img src=\"https://placehold.co/480x360\" alt=\"\" /></div></div>",
+      "css": ".ds-vitrine { position: relative; aspect-ratio: 4 / 3; } .ds-vitrine-licht { position: absolute; inset: 0; z-index: -1; background: radial-gradient(65% 60% at 50% 40%, rgba(205,162,122,0.32), transparent 72%); } .ds-vitrine-rahmen { position: relative; height: 100%; overflow: hidden; border-radius: 4px; border: 1px solid rgba(205,162,122,0.55); box-shadow: 0 0 0 1px rgba(0,0,0,0.4) inset, 0 40px 100px -30px rgba(0,0,0,0.7); background: #15100d; } .ds-vitrine-rahmen img { width: 100%; height: 100%; object-fit: cover; }"
+    },
+    {
+      "name": "Plakette (Label auf Samt)",
+      "kind": "chip",
+      "refersTo": "vitrine-plakette",
+      "description": "Kleine, golden getrackte Beschriftung auf dunklem Grund, das Pendant zur hellen Ueberzeile.",
+      "html": "<p class=\"ds-plakette\">Projekte</p>",
+      "css": ".ds-plakette { display: inline-flex; align-items: center; gap: 8px; font-family: Inter, sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #cda27a; }"
+    },
+    {
       "name": "Primary Button",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "Main call to action, e.g. \"Anfrage senden\", \"Immobilien erkunden\".",
-      "html": "<a class=\"ds-btn-primary\" href=\"#\">Anfrage senden</a>",
-      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 56px; padding: 14px 28px; background: #9a5c4a; color: #ffffff; font-family: Inter, sans-serif; font-weight: 600; font-size: 1rem; border-radius: 4px; text-decoration: none; transition: background-color 0.2s; } .ds-btn-primary:hover { background: #7a4839; } .ds-btn-primary:focus-visible { outline: 3px solid #9a5c4a; outline-offset: 3px; }"
+      "description": "Hauptaktion, Signet-Braun gefuellt. Innerhalb der festen Vitrinen-Buehne (.bg-flaeche-dunkel, z. B. Hero) zusaetzlich mit duennem Goldrand (border-gold/60), auf Foyer-Flaechen ohne Goldrand.",
+      "html": "<a class=\"ds-btn-primary ds-btn-primary--vitrine\" href=\"#\">Immobilien erkunden</a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 56px; padding: 14px 28px; background: #9a5c4a; color: #ffffff; font-family: Inter, sans-serif; font-weight: 600; font-size: 1rem; border-radius: 3px; text-decoration: none; transition: background-color 0.2s; } .ds-btn-primary:hover { background: #7a4839; } .ds-btn-primary:focus-visible { outline: 2px solid #9a5c4a; outline-offset: 3px; } .ds-btn-primary--vitrine { border: 1px solid rgba(205,162,122,0.6); }"
     },
     {
-      "name": "Secondary Button",
+      "name": "On-Dark Button",
       "kind": "button",
-      "refersTo": "button-secondary",
-      "description": "Secondary action next to a primary button, on light backgrounds only.",
-      "html": "<a class=\"ds-btn-secondary\" href=\"#\">Alle Projekte</a>",
-      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 56px; padding: 14px 28px; background: transparent; color: #1c1714; font-family: Inter, sans-serif; font-weight: 600; font-size: 1rem; border: 1px solid currentColor; border-radius: 4px; text-decoration: none; transition: background-color 0.2s, color 0.2s; } .ds-btn-secondary:hover { background: #1c1714; color: #ffffff; }"
-    },
-    {
-      "name": "Project Card",
-      "kind": "card",
-      "refersTo": "project-card",
-      "description": "Referenz/project tile used in grids on the homepage and the projects overview.",
-      "html": "<article class=\"ds-card\"><div class=\"ds-card-media\"><img src=\"https://placehold.co/480x360\" alt=\"\" /></div><div class=\"ds-card-meta\"><span class=\"ds-card-tag\">Neubau</span><span>Kreuzlingen</span><span>August 2026</span></div><h3 class=\"ds-card-title\">Kreuzlingen</h3><p class=\"ds-card-text\">Neubauprojekt der Apple Property Group AG in Kreuzlingen mit Seeblick.</p></article>",
-      "css": ".ds-card { display: flex; flex-direction: column; font-family: Inter, sans-serif; } .ds-card-media { position: relative; aspect-ratio: 4 / 3; border-radius: 6px; overflow: hidden; background: #f6f2ef; } .ds-card-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); } .ds-card:hover .ds-card-media img { transform: scale(1.04); } .ds-card-meta { display: flex; flex-wrap: wrap; gap: 4px 12px; margin-top: 20px; font-size: 0.875rem; color: #5b524c; } .ds-card-tag { color: #9a5c4a; font-weight: 600; } .ds-card-title { margin-top: 8px; font-family: 'Titillium Web', sans-serif; font-weight: 600; font-size: 1.25rem; color: #1c1714; } .ds-card-text { margin-top: 8px; color: #5b524c; line-height: 1.6; }"
+      "refersTo": "button-on-dark",
+      "description": "Sekundaerknopf auf dunklem Samt, z. B. Telefonnummer im Kontaktaufruf oder Hero.",
+      "html": "<a class=\"ds-btn-dark\" href=\"#\">+41 71 688 10 10</a>",
+      "css": ".ds-btn-dark { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 56px; padding: 14px 28px; background: transparent; color: #f3ece3; font-family: Inter, sans-serif; font-weight: 600; font-size: 1rem; border: 1px solid rgba(205,162,122,0.5); border-radius: 3px; text-decoration: none; transition: all 0.2s; } .ds-btn-dark:hover { border-color: #cda27a; background: #cda27a; color: #15100d; }"
     },
     {
       "name": "Text Input",
       "kind": "input",
       "refersTo": "input-field",
-      "description": "Contact form text field.",
-      "html": "<div class=\"ds-field\"><label class=\"ds-label\" for=\"ds-name\">Vorname und Name *</label><input class=\"ds-input\" id=\"ds-name\" type=\"text\" placeholder=\"\" /></div>",
-      "css": ".ds-field { display: flex; flex-direction: column; font-family: Inter, sans-serif; } .ds-label { margin-bottom: 8px; font-size: 0.875rem; font-weight: 600; color: #1c1714; } .ds-input { width: 100%; padding: 12px 16px; background: #ffffff; border: 1px solid #e6ded8; border-radius: 6px; font-size: 1rem; color: #1c1714; outline: none; transition: border-color 0.2s, box-shadow 0.2s; } .ds-input::placeholder { color: rgba(91, 82, 76, 0.7); } .ds-input:focus { border-color: #9a5c4a; box-shadow: 0 0 0 2px rgba(154, 92, 74, 0.25); }"
+      "description": "Formularfeld, folgt dem Hell/Dunkel-Umschalter (hier im dunklen Standardmodus gezeigt).",
+      "html": "<div class=\"ds-field\"><label class=\"ds-label\" for=\"ds-name\">Vorname und Name *</label><input class=\"ds-input\" id=\"ds-name\" type=\"text\" /></div>",
+      "css": ".ds-field { display: flex; flex-direction: column; font-family: Inter, sans-serif; } .ds-label { margin-bottom: 8px; font-size: 0.875rem; font-weight: 600; color: #f3ece3; } .ds-input { width: 100%; padding: 12px 16px; background: #2c2319; border: 1px solid #4c3b2c; border-radius: 6px; font-size: 1rem; color: #f3ece3; outline: none; transition: border-color 0.2s, box-shadow 0.2s; } .ds-input:focus { border-color: #cda27a; box-shadow: 0 0 0 2px rgba(205,162,122,0.25); }"
     },
     {
-      "name": "Header Nav Link",
-      "kind": "nav",
-      "refersTo": "nav-link",
-      "description": "Primary navigation link, default and active state.",
-      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link\" href=\"#\">Projekte</a><a class=\"ds-nav-link ds-nav-link--active\" href=\"#\">Über uns</a></nav>",
-      "css": ".ds-nav { display: flex; align-items: center; gap: 24px; font-family: Inter, sans-serif; } .ds-nav-link { padding: 8px 12px; border-radius: 6px; font-size: 0.95rem; font-weight: 500; color: #1c1714; text-decoration: none; transition: color 0.2s; } .ds-nav-link:hover, .ds-nav-link--active { color: #9a5c4a; }"
+      "name": "Galerie-Karussell (Projekt-Detailseite, Bild-Hero)",
+      "kind": "carousel",
+      "refersTo": "galerie-scroller",
+      "description": "Titelbild plus alle Galeriebilder in einem Karussell, ersetzt seit 24.09.2026 das separate statische Titelbild. Ein Bild pro Ansicht in .vitrine-rahmen/.vitrine-licht, natives Scroll-Snap, Pfeile/Punkte/Zaehler als gleichwertige Kontrollen. Bei genau einem Bild ohne Kontrollen.",
+      "html": "<div class=\"ds-galerie\"><div class=\"ds-galerie-scroller\"><div class=\"ds-galerie-slide\"><img src=\"https://placehold.co/640x400\" alt=\"\" /></div></div><button class=\"ds-galerie-pfeil\" aria-label=\"Naechstes Bild\">&#8250;</button></div>",
+      "css": ".ds-galerie { position: relative; } .ds-galerie-scroller { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; } .ds-galerie-slide { flex-shrink: 0; width: 100%; scroll-snap-align: center; border-radius: 4px; border: 1px solid rgba(205,162,122,0.55); overflow: hidden; } .ds-galerie-pfeil { position: absolute; top: 50%; right: 12px; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 999px; border: 1px solid rgba(205,162,122,0.5); background: rgba(16,11,8,0.8); color: #f3ece3; }"
+    },
+    {
+      "name": "Theme Toggle",
+      "kind": "control",
+      "refersTo": "theme-umschalter",
+      "description": "Nicht aufdringlicher Umschalter zwischen dunklem Standardmodus und hellem Modus, in der Kopfzeile vor dem Kontakt-Knopf.",
+      "html": "<button class=\"ds-toggle\" type=\"button\" aria-pressed=\"false\" aria-label=\"Dunkle Ansicht aktiv, zur hellen Ansicht wechseln\">&#9789;</button>",
+      "css": ".ds-toggle { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 6px; background: transparent; color: currentColor; border: none; cursor: pointer; transition: color 0.2s; } .ds-toggle:hover { color: #cda27a; }"
     }
   ],
   "narrative": {
-    "northStar": "Quiet Rose Gold",
-    "overview": "The site reads like a well-run, owner-led business, not a real-estate brochure. Rose gold is a rare, precise accent, never a wash: one button, one line under an eyebrow label, one hover state at a time. Everything else sits on paper white or a warm linen tint, set in a crisp, no-nonsense grid that lets the actual project photography (real renders and real rooms, never stock) carry the emotional weight. Corners are barely rounded, shadows only appear as a response to scrolling or hovering, and nothing glows, gradients only exist to keep white hero text readable over a photo.\n\nConfirmed anti-reference: a generic glossy real-estate broker site, stock-photo families, exclamation-mark sales copy, and glossy colour gradients as decoration. This system explicitly rejects all of that.",
+    "northStar": "Die Vitrine (Dunkelmodus als Standard)",
+    "overview": "Jedes Projekt liegt wie ein einzelnes Schmuckstueck in einer eigenen Vitrine: gerahmt von einer duennen Blattgoldlinie, unter einem weichen Lichtkreis, auf tiefem, samtigem Schwarzbraun. Das System uebersetzt die Sprache von Cartier, Tiffany und Rolex als Materialwechsel, nicht als Farbwechsel.\n\nSeit dem 23. September 2026 ist Dunkel der Standardmodus der ganzen Website, nicht nur einzelner Abschnitte. Ein nicht aufdringlicher Umschalter in der Kopfzeile (Mond- und Sonnensymbol) fuehrt zu einem hellen Modus, die Wahl bleibt in localStorage gemerkt. Alle Flaechen- und Textfarben, die mit dem Modus wechseln, haengen am Token 'akzent' und den Neutraltoenen 'grund', 'flaeche', 'text', 'text-leise', 'linie'. Die Vitrinen-Buehne selbst (Hero, Projektkarten, Team, Fusszeile) bleibt unabhaengig vom Umschalter immer dunkel. Das reale Firmensignet hat einen echten transparenten Hintergrund und funktioniert deshalb unveraendert auf beiden Flaechen. Ueberschriften sind durchgaengig in Cormorant, einer feinen, gravierten Serife.",
     "keyCharacteristics": [
-      "One accent colour (Weathered Rose Gold) used sparingly, never as a background wash",
-      "Flat-by-default surfaces; shadows appear only on hover, scroll, or open state",
-      "Very shallow corner radii (4 to 6px), \"angular, not playful\"",
-      "A very wide content column (max 2400px) instead of a boxed 1280px layout",
-      "Real project photography full-bleed in heroes and cards, no illustration, no stock imagery"
+      "Jedes Bild liegt in einem eigenen goldgerahmten Fenster mit Lichtkreis, nie als flaechiges Hintergrundbild",
+      "Dunkel ist der Standardmodus der ganzen Website, ein nicht aufdringlicher Umschalter in der Kopfzeile fuehrt zu Hell",
+      "Die Vitrinen-Buehne (Hero, Projekte, Team, Fusszeile) bleibt in beiden Modi immer dunkel",
+      "Cormorant fuer Ueberschriften, Inter fuer Fliesstext und Bedienelemente",
+      "Rose Gold (heller Modus) und Blattgold (dunkler Modus) sind dieselbe Familie, gesteuert ueber einen einzigen Akzent-Token",
+      "Praezise, knappe Kanten (3 bis 4 px), keine weichen Baukasten-Rundungen"
     ],
     "rules": [
-      { "name": "The One Accent Rule", "body": "Weathered Rose Gold appears as a fill on at most one element per view (the primary button or the active nav state). Everywhere else it is a line, a label, or a hover colour, never a block of colour behind a whole section.", "section": "colors" },
-      { "name": "The Hyphenation Rule", "body": "Long compound German words are allowed to hyphenate on narrow screens instead of overflowing; this is load-bearing for German-language headlines and must not be turned off.", "section": "typography" },
-      { "name": "The Response-Only Shadow Rule", "body": "A shadow only ever appears because of scroll position, hover, or an open/closed state. No card, button, or section carries a shadow at rest.", "section": "elevation" }
+      { "name": "Die Rahmen-Regel", "body": "Ein Projektbild bekommt nie ein volles Hintergrundbild mit Text darueber. Es liegt immer gerahmt mit Lichtkreis auf dunklem Samt.", "section": "colors" },
+      { "name": "Die Buehnen-Regel", "body": "Hero, Projektkarten, Team und Fusszeile bleiben in beiden Modi immer dunkel. Nur die Flaechen dazwischen folgen dem Umschalter.", "section": "colors" },
+      { "name": "Die Ein-Licht-Regel", "body": "Jede Vitrine hat genau einen Lichtkreis hinter dem gerahmten Objekt. Kein zweites Leuchten, kein Glühen an anderen Kanten.", "section": "elevation" }
     ],
     "dos": [
-      "Do keep Weathered Rose Gold to one filled element per screen; everywhere else use it as a line, label, or hover state (The One Accent Rule).",
-      "Do use real project photography full-bleed in heroes and cards; never stock photography or illustration.",
-      "Do keep radii shallow (4px buttons, 6px cards); never jump to fully rounded (\"pill\") buttons or large rounded-2xl cards.",
-      "Do let shadows appear only in response to scroll, hover, or open state (The Response-Only Shadow Rule).",
-      "Do keep the content wrapper at up to 2400px; a narrower, centred 1280px container is the generic-template look this system exists to avoid."
+      "Do jedes Projektbild in einem Goldrahmen mit Lichtkreis zeigen, nie als flaechiges Hintergrundbild.",
+      "Do neue Farben ueber die Token akzent, grund, flaeche, text, text-leise, linie setzen, nie ueber feste Tailwind-Farben.",
+      "Do die Vitrinen-Buehne (Hero, Projekte, Team, Fusszeile) immer dunkel halten, unabhaengig vom Umschalter.",
+      "Do Cormorant nur fuer Ueberschriften verwenden, Inter fuer alles Bedienbare und Lesbare.",
+      "Do Fokusringe: Akzentfarbe als Standard, Gold nur innerhalb dunkler Abschnitte."
     ],
     "donts": [
-      "Don't fill a whole section, card, or hero background with the accent colour; it reads as a coupon banner, not a developer's site.",
-      "Don't add drop shadows, glows, or gradients as decoration; the only permitted gradient is the black overlay behind hero text on a photo.",
-      "Don't write sales-brochure copy (exclamation marks, \"Jetzt anfragen!\", superlatives); the tone is Swiss-German, factual, and trustworthy, matching PRODUCT.md's voice commitment.",
-      "Don't invent stats, testimonials, or team photos that are not confirmed; empty states (no photo) render a plain outline person icon, never a placeholder stock headshot."
+      "Don't ein Projektbild vollflaechig mit Text darueber legen.",
+      "Don't eine ganze Sektion mit der Akzentfarbe fuellen.",
+      "Don't ein zweites Leuchten oder einen zweiten Schatten neben dem Vitrinenlicht hinzufuegen.",
+      "Don't Kennzahlen, Kundenstimmen oder Teamfotos erfinden, die nicht bestaetigt sind.",
+      "Don't annehmen, das Logo brauche einen hellen Hintergrund. Es hat einen echten transparenten Hintergrund."
     ]
   }
 }

@@ -28,7 +28,11 @@ Next.js-Website mit Keystatic-Sammlungen für Projekte (`Referenzen`), freie Sei
 
 ## Brand Commitments
 
-Name: Apple Property Group AG. Bestehendes Signet (Apfel-Monogramm "APG" in Rose Gold) und Rose-Gold-Farbpalette (`--color-marke: #9a5c4a`) sind gesetzt und übernommen von der bisherigen Website. Überschriften in Titillium Web, Fliesstext in Inter, ebenfalls von der bisherigen Website übernommen. Es existiert keine helle Logovariante für dunklen Hintergrund, die Fusszeile zeigt deshalb den Firmennamen als Text.
+Name: Apple Property Group AG. Bestehendes Signet (Apfel-Monogramm "APG" in Rose Gold) ist die reale, unveränderliche Grafik der Firma. Die Datei hat tatsächlich einen transparenten Hintergrund (geprüft) und funktioniert deshalb sowohl auf hellem als auch auf dunklem Grund, `logo` und `logohell` in Keystatic zeigen bewusst auf dieselbe Datei.
+
+Seit der Neugestaltung "Die Vitrine" (September 2026, inspiriert von Cartier, Tiffany, Rolex u. a.) gilt: Rose Gold bleibt die reale Signetfarbe (`--color-marke: #9a5c4a`) auf hellen Flächen, ein helleres Blattgold (`--color-gold: #cda27a`) trägt dieselbe Familie auf dunklen "Vitrinen"-Flächen weiter. Überschriften in Cormorant (vorher Titillium Web), Fliesstext weiterhin in Inter.
+
+Seit dem 23. September 2026 ist Dunkel der Standardmodus der ganzen Website (nicht nur einzelner Abschnitte), mit einem nicht aufdringlichen Umschalter in der Kopfzeile zu einem hellen Modus (`ThemeUmschalter.tsx`, Zustand in `localStorage`). Details und Begründung in DESIGN.md.
 
 ## Evidence on Hand
 

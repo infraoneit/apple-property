@@ -86,11 +86,11 @@ export function NetlifyFormular({
   if (status === 'erfolg') {
     return (
       <div className={cn('rounded-[var(--radius-karte)] border border-linie bg-flaeche p-8 lg:p-10', className)} role="status">
-        <CheckCircle2 className="size-10 text-marke" aria-hidden />
+        <CheckCircle2 className="size-10 text-akzent" aria-hidden />
         <h3 className="mt-5 text-2xl font-semibold">Vielen Dank für Ihre Nachricht</h3>
         <p className="mt-3 max-w-prose text-text-leise">{bestaetigung}</p>
         {testmodus ? (
-          <p className="mt-4 rounded-md bg-amber-100 px-4 py-3 text-sm text-amber-900">
+          <p className="mt-4 rounded-md border border-amber-500/40 bg-amber-500/10 px-4 py-3 text-sm text-text">
             Testmodus: Lokal wird nichts versendet. Auf Netlify geht die Anfrage an die hinterlegte Adresse.
           </p>
         ) : null}
@@ -151,10 +151,10 @@ export function NetlifyFormular({
         if (feld.typ === 'zustimmung') {
           return (
             <div key={feld.name} className={cn('flex items-start gap-3', breite)}>
-              <input id={feldId} type="checkbox" name={feld.name} value="ja" required={feld.pflicht} className="mt-0.5 size-6 shrink-0 cursor-pointer accent-[var(--color-marke)]" />
+              <input id={feldId} type="checkbox" name={feld.name} value="ja" required={feld.pflicht} className="mt-0.5 size-6 shrink-0 cursor-pointer accent-[var(--color-akzent)]" />
               <label htmlFor={feldId} className="text-sm leading-relaxed text-text-leise">
                 {feld.label}{' '}
-                <Link href={datenschutzLink} className="underline underline-offset-4 hover:text-marke">
+                <Link href={datenschutzLink} className="underline underline-offset-4 hover:text-akzent">
                   Zur Datenschutzerklärung
                 </Link>
                 {feld.pflicht ? <Pflicht /> : null}
@@ -174,8 +174,8 @@ export function NetlifyFormular({
       })}
 
       {status === 'fehler' ? (
-        <div className="flex gap-3 rounded-md border border-red-300 bg-red-50 p-4 text-sm text-red-900 sm:col-span-2" role="alert">
-          <TriangleAlert className="size-5 shrink-0" aria-hidden />
+        <div className="flex gap-3 rounded-md border border-red-500/40 bg-red-500/10 p-4 text-sm text-text sm:col-span-2" role="alert">
+          <TriangleAlert className="size-5 shrink-0 text-red-500" aria-hidden />
           <p>
             Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut. Sie erreichen uns auch per E-Mail an{' '}
             <a className="underline" href={`mailto:${kontaktEmail}`}>
@@ -205,7 +205,7 @@ export function NetlifyFormular({
 
 function Pflicht() {
   return (
-    <span className="text-marke" aria-hidden>
+    <span className="text-akzent" aria-hidden>
       *
     </span>
   );

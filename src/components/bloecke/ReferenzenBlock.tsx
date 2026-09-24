@@ -14,13 +14,14 @@ export async function ReferenzenBlock({ daten: d }: { daten: BlockDaten<'referen
   if (referenzen.length === 0) return null;
 
   return (
-    <section className="abschnitt bg-flaeche">
+    <section className="abschnitt bg-flaeche-dunkel text-text-hell">
       <div className="container-seite">
         <AbschnittKopf
           ueberzeile={d.ueberzeile}
           titel={d.titel}
           text={d.text}
           link={d.linkText ? { text: d.linkText, href: '/referenzen' } : undefined}
+          hell
         />
         <div className={cn('grid gap-x-8 gap-y-12 sm:grid-cols-2', anzahl === 3 ? 'lg:grid-cols-3' : anzahl === 4 ? 'lg:grid-cols-2 xl:grid-cols-4' : 'lg:grid-cols-3')}>
           {referenzen.map((r) => (

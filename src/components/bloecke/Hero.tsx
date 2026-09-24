@@ -35,36 +35,49 @@ function Knoepfe({ d, hell }: { d: BlockDaten<'hero'>; hell: boolean }) {
   );
 }
 
+/**
+ * Vollbild: das Stück liegt gerahmt und beleuchtet in der Mitte des Raums, nicht als
+ * Hintergrund mit Text darüber. Titel kündigt an, das Bild in der Vitrine löst ein.
+ */
 function HeroVollbild({ daten: d, istErster }: Props) {
   const gross = d.hoehe === 'gross';
   const TitelTag = istErster ? 'h1' : 'h2';
 
   return (
-    <section className={cn('relative isolate flex overflow-hidden bg-flaeche-dunkel text-text-hell', gross ? 'min-h-[78svh]' : 'min-h-[48svh]')}>
-      {d.bild ? (
-        <>
-          <Image
-            src={d.bild}
-            alt={d.bildAlt}
-            fill
-            loading={istErster ? 'eager' : 'lazy'}
-            fetchPriority={istErster ? 'high' : 'auto'}
-            sizes="100vw"
-            className="-z-20 object-cover"
-          />
-          {/* Mobil liegt der Text über dem ganzen Bild, deshalb dort Verlauf von unten */}
-          <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black/85 via-black/55 to-black/25 lg:bg-gradient-to-r lg:from-black/80 lg:via-black/50 lg:to-black/10" aria-hidden />
-        </>
-      ) : null}
-      <div className={cn('container-seite flex flex-col justify-end', gross ? 'pt-28 pb-16 lg:pt-40 lg:pb-24' : 'pt-20 pb-12 lg:pt-28 lg:pb-16')}>
-        <div className="max-w-5xl animate-einblenden">
-          {d.ueberzeile ? <p className="ueberzeile !text-marke-hell">{sauberText(d.ueberzeile)}</p> : null}
-          <TitelTag className={cn(gross ? 'titel-1' : 'titel-2', 'whitespace-pre-line')}>{sauberText(d.titel)}</TitelTag>
+    <section className="relative overflow-hidden bg-flaeche-dunkel text-text-hell">
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.5] [background-image:linear-gradient(var(--color-linie-dunkel)_1px,transparent_1px),linear-gradient(90deg,var(--color-linie-dunkel)_1px,transparent_1px)] [background-size:96px_96px] [mask-image:radial-gradient(80%_60%_at_50%_0%,black,transparent)]"
+        aria-hidden
+      />
+      <div className={cn('container-seite relative flex flex-col items-center text-center', gross ? 'pt-20 pb-16 lg:pt-28 lg:pb-24' : 'pt-16 pb-12 lg:pt-20 lg:pb-16')}>
+        <div className="max-w-3xl animate-einblenden">
+          {d.ueberzeile ? <p className="vitrine-plakette justify-center">{sauberText(d.ueberzeile)}</p> : null}
+          <TitelTag className={cn(gross ? 'titel-1' : 'titel-2', 'mt-3 whitespace-pre-line')}>{sauberText(d.titel)}</TitelTag>
           {absaetze(d.text).map((a, i) => (
-            <p key={i} className="mt-6 max-w-3xl text-lg text-text-hell-leise lg:text-xl 3xl:text-2xl">
+            <p key={i} className="mx-auto mt-6 max-w-2xl text-lg text-text-hell-leise lg:text-xl 3xl:text-2xl">
               {a}
             </p>
           ))}
+        </div>
+
+        {d.bild ? (
+          <div className={cn('relative mt-14 w-full max-w-6xl animate-einblenden lg:mt-16', gross ? 'aspect-[16/9] lg:aspect-[21/9]' : 'aspect-[16/9]')}>
+            <div className="vitrine-licht" />
+            <div className="vitrine-rahmen h-full">
+              <Image
+                src={d.bild}
+                alt={d.bildAlt}
+                fill
+                loading={istErster ? 'eager' : 'lazy'}
+                fetchPriority={istErster ? 'high' : 'auto'}
+                sizes="(min-width: 1536px) 1400px, 100vw"
+                className="object-cover"
+              />
+            </div>
+          </div>
+        ) : null}
+
+        <div className="animate-einblenden">
           <Knoepfe d={d} hell />
         </div>
       </div>
@@ -77,39 +90,41 @@ function HeroGeteilt({ daten: d, istErster }: Props) {
   const TitelTag = istErster ? 'h1' : 'h2';
 
   return (
-    <section className="relative overflow-hidden bg-flaeche">
-      {/* Feines Raster als ruhige Struktur im Hintergrund */}
+    <section className="relative overflow-hidden bg-flaeche-dunkel text-text-hell">
       <div
-        className="pointer-events-none absolute inset-0 opacity-[0.35] [background-image:linear-gradient(var(--color-linie)_1px,transparent_1px),linear-gradient(90deg,var(--color-linie)_1px,transparent_1px)] [background-size:64px_64px] [mask-image:linear-gradient(to_bottom,black,transparent)]"
+        className="pointer-events-none absolute inset-0 opacity-[0.5] [background-image:linear-gradient(var(--color-linie-dunkel)_1px,transparent_1px),linear-gradient(90deg,var(--color-linie-dunkel)_1px,transparent_1px)] [background-size:80px_80px] [mask-image:linear-gradient(to_bottom,black,transparent)]"
         aria-hidden
       />
       <div className={cn('container-seite relative grid items-center gap-12 lg:grid-cols-2 lg:gap-20 2xl:gap-28', gross ? 'py-16 lg:py-24' : 'py-12 lg:py-16')}>
         <div className="max-w-3xl animate-einblenden">
-          {d.ueberzeile ? <p className="ueberzeile">{sauberText(d.ueberzeile)}</p> : null}
-          <TitelTag className={cn(gross ? 'titel-1' : 'titel-2', 'whitespace-pre-line')}>{sauberText(d.titel)}</TitelTag>
+          {d.ueberzeile ? <p className="vitrine-plakette">{sauberText(d.ueberzeile)}</p> : null}
+          <TitelTag className={cn(gross ? 'titel-1' : 'titel-2', 'mt-3 whitespace-pre-line')}>{sauberText(d.titel)}</TitelTag>
           {absaetze(d.text).map((a, i) => (
-            <p key={i} className="einleitung mt-6">
+            <p key={i} className="mt-6 max-w-2xl text-lg text-text-hell-leise lg:text-xl 3xl:text-2xl">
               {a}
             </p>
           ))}
-          <Knoepfe d={d} hell={false} />
+          <Knoepfe d={d} hell />
         </div>
         {d.bild ? (
           <div
             className={cn(
-              'relative overflow-hidden rounded-[var(--radius-karte)] bg-flaeche-dunkel shadow-[0_30px_80px_-30px_rgba(0,0,0,0.35)]',
+              'relative animate-einblenden',
               gross ? 'aspect-[4/3] lg:aspect-auto lg:h-[min(72svh,760px)]' : 'aspect-[16/10] lg:aspect-auto lg:h-[min(48svh,520px)]'
             )}
           >
-            <Image
-              src={d.bild}
-              alt={d.bildAlt}
-              fill
-              loading={istErster ? 'eager' : 'lazy'}
-              fetchPriority={istErster ? 'high' : 'auto'}
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-cover"
-            />
+            <div className="vitrine-licht" />
+            <div className="vitrine-rahmen h-full">
+              <Image
+                src={d.bild}
+                alt={d.bildAlt}
+                fill
+                loading={istErster ? 'eager' : 'lazy'}
+                fetchPriority={istErster ? 'high' : 'auto'}
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+              />
+            </div>
           </div>
         ) : null}
       </div>

@@ -54,7 +54,7 @@ export default async function LeistungSeite({ params }: Props) {
           <div className="container-seite">
             <div className="mb-10 flex items-end justify-between gap-6">
               <h2 className="titel-2">Weitere Leistungen</h2>
-              <Link href="/leistungen" className="font-semibold hover:text-marke">
+              <Link href="/leistungen" className="font-semibold hover:text-akzent">
                 Alle Leistungen
               </Link>
             </div>

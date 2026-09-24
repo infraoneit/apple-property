@@ -29,7 +29,7 @@ export function Ablauf({ daten: d }: { daten: BlockDaten<'ablauf'> }) {
                 />
               ) : null}
               <span
-                className="absolute top-0 left-0 flex size-11 items-center justify-center rounded-full border border-marke bg-grund font-titel text-sm font-bold text-marke"
+                className="absolute top-0 left-0 flex size-11 items-center justify-center rounded-full border border-akzent bg-flaeche font-titel text-sm font-bold text-akzent"
                 aria-hidden
               >
                 {String(i + 1).padStart(2, '0')}

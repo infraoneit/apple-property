@@ -76,16 +76,16 @@ export default async function JobSeite({ params }: Props) {
       >
         <ul className="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-text-leise">
           <li className="inline-flex items-center gap-2">
-            <Clock className="size-5 text-marke" aria-hidden />
+            <Clock className="size-5 text-akzent" aria-hidden />
             {j.pensum}
           </li>
           <li className="inline-flex items-center gap-2">
-            <MapPin className="size-5 text-marke" aria-hidden />
+            <MapPin className="size-5 text-akzent" aria-hidden />
             {j.arbeitsort}
           </li>
           {j.eintritt ? (
             <li className="inline-flex items-center gap-2">
-              <CalendarDays className="size-5 text-marke" aria-hidden />
+              <CalendarDays className="size-5 text-akzent" aria-hidden />
               Eintritt: {j.eintritt}
             </li>
           ) : null}

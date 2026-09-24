@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { ChevronDown, Menu, Phone, X } from 'lucide-react';
 import { cn } from '@/lib/cn';
+import { ThemeUmschalter } from './ThemeUmschalter';
 
 type Unterpunkt = { text: string; link: string; beschreibung?: string };
 type Punkt = { text: string; link: string; unterpunkte: readonly Unterpunkt[] };
@@ -119,7 +120,7 @@ export function Kopfzeile({ firmenname, logo, telefon, menue, knopf }: Props) {
       <header
         className={cn(
           'sticky top-0 z-50 border-b transition-[background-color,border-color,box-shadow] duration-300',
-          gescrollt || offen ? 'border-linie bg-grund/95 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.12)] backdrop-blur-md' : 'border-transparent bg-grund'
+          gescrollt || offen ? 'border-akzent/25 bg-grund/95 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.15)] backdrop-blur-md' : 'border-akzent/10 bg-grund'
         )}
       >
         <a
@@ -128,7 +129,7 @@ export function Kopfzeile({ firmenname, logo, telefon, menue, knopf }: Props) {
         >
           Zum Inhalt springen
         </a>
-        <div className="container-seite flex h-20 items-center justify-between gap-8 lg:h-24 3xl:h-28">
+        <div className="container-seite grid h-20 grid-cols-[1fr_auto_1fr] items-center gap-4 lg:h-24 3xl:h-28">
           <Link href="/" className="flex shrink-0 items-center" aria-label={`${firmenname}, zur Startseite`}>
             {logo ? (
               <Image
@@ -164,9 +165,9 @@ export function Kopfzeile({ firmenname, logo, telefon, menue, knopf }: Props) {
                     <Link
                       href={punkt.link}
                       className={cn(
-                        'inline-flex items-center rounded-md py-2 pl-3 text-[0.95rem] font-medium transition-colors hover:text-marke 2xl:text-base 3xl:text-lg',
+                        'inline-flex items-center rounded-md py-2 pl-3 text-[0.95rem] font-medium transition-colors hover:text-akzent 2xl:text-base 3xl:text-lg',
                         hatUntermenue ? 'pr-1' : 'pr-3',
-                        istAktiv(punkt.link) && 'text-marke'
+                        istAktiv(punkt.link) && 'text-akzent'
                       )}
                       aria-current={istAktiv(punkt.link) ? 'page' : undefined}
                     >
@@ -175,7 +176,7 @@ export function Kopfzeile({ firmenname, logo, telefon, menue, knopf }: Props) {
                     {hatUntermenue ? (
                       <button
                         type="button"
-                        className="inline-flex size-8 items-center justify-center rounded-md hover:text-marke"
+                        className="inline-flex size-8 items-center justify-center rounded-md hover:text-akzent"
                         aria-expanded={aufgeklappt}
                         aria-controls={`untermenue-${index}`}
                         aria-label={`Untermenü ${punkt.text} ${aufgeklappt ? 'schliessen' : 'öffnen'}`}
@@ -202,7 +203,7 @@ export function Kopfzeile({ firmenname, logo, telefon, menue, knopf }: Props) {
                         <ul
                           className={cn(
                             'rounded-[var(--radius-karte)] border border-linie bg-grund p-2 shadow-xl',
-                            mega ? 'grid w-[40rem] grid-cols-2 gap-1 border-t-2 border-t-marke p-3' : 'min-w-64'
+                            mega ? 'grid w-[40rem] grid-cols-2 gap-1 border-t-2 border-t-akzent p-3' : 'min-w-64'
                           )}
                         >
                           {punkt.unterpunkte.map((u) => (
@@ -226,37 +227,41 @@ export function Kopfzeile({ firmenname, logo, telefon, menue, knopf }: Props) {
               })}
             </ul>
           </nav>
-          <div className="hidden items-center gap-6 lg:flex">
-            <a
-              href={telefonLink}
-              className="hidden items-center gap-2 text-[0.95rem] font-medium whitespace-nowrap hover:text-marke xl:inline-flex 2xl:text-base"
-            >
-              <Phone className="size-4" aria-hidden />
-              {telefon}
-            </a>
-            {hatKnopf ? (
-              <Link href={knopf.link!} className="knopf-primaer !min-h-11 !px-6 !text-[0.95rem] 2xl:!text-base">
-                {knopf.text}
-              </Link>
-            ) : null}
-          </div>
+          <div className="flex items-center justify-end">
+            <div className="hidden items-center gap-2 lg:flex">
+              <ThemeUmschalter />
+              <a
+                href={telefonLink}
+                className="hidden items-center gap-2 px-3 text-[0.95rem] font-medium whitespace-nowrap hover:text-akzent xl:inline-flex 2xl:text-base"
+              >
+                <Phone className="size-4" aria-hidden />
+                {telefon}
+              </a>
+              {hatKnopf ? (
+                <Link href={knopf.link!} className="knopf-primaer !min-h-11 !px-6 !text-[0.95rem] 2xl:!text-base">
+                  {knopf.text}
+                </Link>
+              ) : null}
+            </div>
 
-          <div className="flex items-center lg:hidden">
-            <a href={telefonLink} aria-label={`Anrufen: ${telefon}`} className="inline-flex h-11 items-center gap-1.5 rounded-md px-2 hover:text-marke">
-              <Phone className="size-5 shrink-0" aria-hidden />
-              <span className="hidden text-sm font-medium sm:inline">Anrufen</span>
-            </a>
-            <button
-              ref={umschalter}
-              type="button"
-              className="inline-flex size-11 items-center justify-center rounded-md"
-              onClick={() => (offen ? schliessen() : setOffen(true))}
-              aria-expanded={offen}
-              aria-controls="mobiles-menue"
-              aria-label={offen ? 'Menü schliessen' : 'Menü öffnen'}
-            >
-              {offen ? <X className="size-7" aria-hidden /> : <Menu className="size-7" aria-hidden />}
-            </button>
+            <div className="flex items-center lg:hidden">
+              <ThemeUmschalter />
+              <a href={telefonLink} aria-label={`Anrufen: ${telefon}`} className="inline-flex h-11 items-center gap-1.5 rounded-md px-2 hover:text-akzent">
+                <Phone className="size-5 shrink-0" aria-hidden />
+                <span className="hidden text-sm font-medium sm:inline">Anrufen</span>
+              </a>
+              <button
+                ref={umschalter}
+                type="button"
+                className="inline-flex size-11 items-center justify-center rounded-md"
+                onClick={() => (offen ? schliessen() : setOffen(true))}
+                aria-expanded={offen}
+                aria-controls="mobiles-menue"
+                aria-label={offen ? 'Menü schliessen' : 'Menü öffnen'}
+              >
+                {offen ? <X className="size-7" aria-hidden /> : <Menu className="size-7" aria-hidden />}
+              </button>
+            </div>
           </div>
         </div>
       </header>
@@ -275,7 +280,7 @@ export function Kopfzeile({ firmenname, logo, telefon, menue, knopf }: Props) {
           <ul className="divide-y divide-linie border-y border-linie">
             {menue.map((punkt) => (
               <li key={punkt.link} className="py-2">
-                <Link href={punkt.link} onClick={() => setOffen(false)} className={cn('block py-3 text-2xl font-semibold', istAktiv(punkt.link) && 'text-marke')}>
+                <Link href={punkt.link} onClick={() => setOffen(false)} className={cn('block py-3 text-2xl font-semibold', istAktiv(punkt.link) && 'text-akzent')}>
                   {punkt.text}
                 </Link>
                 {punkt.unterpunkte.length > 0 ? (

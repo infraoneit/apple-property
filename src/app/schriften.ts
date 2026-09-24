@@ -1,9 +1,10 @@
-import { Inter, Titillium_Web } from 'next/font/google';
+import { Cormorant, Inter } from 'next/font/google';
 
 /**
  * Schriften werden von next/font beim Build heruntergeladen und selbst ausgeliefert.
  * Keine Verbindung zu Google beim Besuch der Seite (Datenschutz).
- * Titillium Web für Überschriften, wie bereits auf der bisherigen Website der Apple Property Group AG.
+ * Cormorant für Überschriften: ein feiner, gravierter Serifenschnitt für die
+ * Vitrinen-Gestaltung, Inter bleibt für Fliesstext, Formulare und Navigation.
  */
 export const schriftText = Inter({
   subsets: ['latin'],
@@ -11,9 +12,9 @@ export const schriftText = Inter({
   display: 'swap',
 });
 
-export const schriftUeberschrift = Titillium_Web({
+export const schriftUeberschrift = Cormorant({
   subsets: ['latin'],
   variable: '--font-ueberschrift',
-  weight: ['600', '700', '900'],
+  weight: ['600', '700'],
   display: 'swap',
 });

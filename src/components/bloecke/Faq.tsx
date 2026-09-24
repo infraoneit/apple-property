@@ -17,7 +17,7 @@ export function Faq({ daten: d }: { daten: BlockDaten<'faq'> }) {
             <details key={i} className="group border-b border-linie">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-6 text-lg font-semibold lg:text-xl [&::-webkit-details-marker]:hidden">
                 {sauberText(e.frage)}
-                <Plus className="size-6 shrink-0 text-marke transition-transform duration-300 group-open:rotate-45" aria-hidden />
+                <Plus className="size-6 shrink-0 text-akzent transition-transform duration-300 group-open:rotate-45" aria-hidden />
               </summary>
               <div className="lesebreite space-y-4 pb-8 text-text-leise">
                 {absaetze(e.antwort).map((a, j) => (

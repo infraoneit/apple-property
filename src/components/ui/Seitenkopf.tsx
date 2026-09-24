@@ -31,7 +31,7 @@ export function Seitenkopf({
               <li key={p.href} className="flex items-center gap-1">
                 {i > 0 ? <ChevronRight className="size-4" aria-hidden /> : null}
                 {i < alle.length - 1 ? (
-                  <Link href={p.href} className="hover:text-marke">
+                  <Link href={p.href} className="hover:text-akzent">
                     {sauberText(p.text)}
                   </Link>
                 ) : (

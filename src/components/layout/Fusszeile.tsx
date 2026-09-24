@@ -15,7 +15,7 @@ export function Fusszeile({ einstellungen: e, navigation: n }: { einstellungen: 
   const jahr = new Date().getFullYear();
 
   return (
-    <footer className="bg-flaeche-dunkel text-text-hell">
+    <footer className="border-t border-gold/20 bg-flaeche-dunkel text-text-hell">
       <div className="container-seite abschnitt">
         <div
           className={cn(
@@ -27,7 +27,7 @@ export function Fusszeile({ einstellungen: e, navigation: n }: { einstellungen: 
             {e.logohell ? (
               <Image src={e.logohell} alt={e.firmenname} width={220} height={64} unoptimized={e.logohell.endsWith('.svg')} className="h-12 w-auto" />
             ) : (
-              <p className="font-titel text-2xl font-extrabold">{e.firmenname}</p>
+              <p className="font-titel text-2xl font-semibold text-text-hell">{e.firmenname}</p>
             )}
             <p className="mt-6 text-text-hell-leise">{sauberText(e.kurzbeschreibung)}</p>
           </div>
@@ -41,12 +41,12 @@ export function Fusszeile({ einstellungen: e, navigation: n }: { einstellungen: 
                 {e.plz} {e.ort}
               </p>
               <p className="pt-2">
-                <a href={`tel:${e.telefon.replaceAll(' ', '')}`} className="inline-block py-1 hover:text-marke-hell">
+                <a href={`tel:${e.telefon.replaceAll(' ', '')}`} className="inline-block py-1 hover:text-gold">
                   {e.telefon}
                 </a>
               </p>
               <p>
-                <a href={`mailto:${e.email}`} className="inline-block py-1 hover:text-marke-hell">
+                <a href={`mailto:${e.email}`} className="inline-block py-1 hover:text-gold">
                   {e.email}
                 </a>
               </p>
@@ -73,7 +73,7 @@ export function Fusszeile({ einstellungen: e, navigation: n }: { einstellungen: 
               <ul className="mt-4 space-y-1">
                 {n.fusszeile.map((l) => (
                   <li key={l.link}>
-                    <Link href={l.link} className="inline-block py-1 hover:text-marke-hell">
+                    <Link href={l.link} className="inline-block py-1 hover:text-gold">
                       {l.text}
                     </Link>
                   </li>

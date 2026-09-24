@@ -1,6 +1,6 @@
-import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { Seitenkopf } from '@/components/ui/Seitenkopf';
+import { Galerie } from '@/components/ui/Galerie';
 import { ReferenzKarte } from '@/components/karten/Karten';
 import { holeReferenz, holeReferenzen, holeUebersichten } from '@/lib/cms';
 import { monatJahr } from '@/lib/datum';
@@ -36,6 +36,8 @@ export default async function ReferenzSeite({ params }: Props) {
     { titel: 'Stand', wert: monatJahr(r.datum) },
   ].filter((f) => f.wert);
 
+  const bilder = [{ bild: r.titelbild, alt: r.titelbildAlt }, ...r.galerie];
+
   return (
     <>
       <Seitenkopf
@@ -48,9 +50,13 @@ export default async function ReferenzSeite({ params }: Props) {
         ]}
       />
 
-      <div className="container-seite pt-12 lg:pt-16">
-        <div className="relative aspect-[16/9] overflow-hidden rounded-[var(--radius-karte)] bg-flaeche lg:aspect-[21/9]">
-          <Image src={r.titelbild} alt={r.titelbildAlt} fill loading="eager" fetchPriority="high" sizes="(min-width: 2400px) 2304px, 100vw" className="object-cover" />
+      <div className="relative bg-flaeche-dunkel pt-12 pb-16 lg:pt-16 lg:pb-20">
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.5] [background-image:linear-gradient(var(--color-linie-dunkel)_1px,transparent_1px),linear-gradient(90deg,var(--color-linie-dunkel)_1px,transparent_1px)] [background-size:80px_80px] [mask-image:radial-gradient(70%_70%_at_50%_50%,black,transparent)]"
+          aria-hidden
+        />
+        <div className="container-seite relative">
+          <Galerie bilder={bilder} sizes="(min-width: 2400px) 2304px, 100vw" seitenverhaeltnis="aspect-[16/9] lg:aspect-[21/9]" />
         </div>
       </div>
 
@@ -58,11 +64,12 @@ export default async function ReferenzSeite({ params }: Props) {
         <div className="container-seite grid gap-12 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] lg:gap-20">
           <div className="fliesstext lesebreite">{inhalt}</div>
           {fakten.length > 0 ? (
-            <aside className="h-fit rounded-[var(--radius-karte)] bg-flaeche p-8 lg:sticky lg:top-32">
-              <dl className="divide-y divide-linie">
+            <aside className="h-fit rounded-[var(--radius-karte)] border border-gold/30 bg-flaeche-dunkel p-8 text-text-hell lg:sticky lg:top-32">
+              <p className="vitrine-plakette mb-2">Angaben</p>
+              <dl className="divide-y divide-linie-dunkel">
                 {fakten.map((f) => (
                   <div key={f.titel} className="py-4 first:pt-0 last:pb-0">
-                    <dt className="text-sm text-text-leise">{f.titel}</dt>
+                    <dt className="text-sm text-text-hell-leise">{f.titel}</dt>
                     <dd className="mt-1 font-semibold">{f.wert}</dd>
                   </div>
                 ))}
@@ -72,20 +79,8 @@ export default async function ReferenzSeite({ params }: Props) {
         </div>
       </section>
 
-      {r.galerie.length > 0 ? (
-        <section className="pb-16 lg:pb-24">
-          <div className="container-seite grid gap-6 sm:grid-cols-2 lg:gap-8 xl:grid-cols-3">
-            {r.galerie.map((b, i) => (
-              <figure key={i} className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-karte)] bg-flaeche">
-                <Image src={b.bild} alt={b.alt} fill sizes="(min-width: 1280px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-cover" />
-              </figure>
-            ))}
-          </div>
-        </section>
-      ) : null}
-
       {weitere.length > 0 ? (
-        <section className="abschnitt border-t border-linie bg-flaeche">
+        <section className="abschnitt border-t border-linie-dunkel bg-flaeche-dunkel text-text-hell">
           <div className="container-seite">
             <h2 className="titel-2 mb-10">Weitere Referenzen</h2>
             <div className="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">

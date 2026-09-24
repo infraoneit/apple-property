@@ -7,8 +7,11 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#ffffff',
+  themeColor: '#1a1410',
 };
+
+/** Verhindert den Farbwechsel-Blitz beim Laden: setzt data-theme, bevor React startet. */
+const THEME_SKRIPT = `try{if(localStorage.getItem('theme')==='light')document.documentElement.dataset.theme='light'}catch(e){}`;
 
 /**
  * Wurzel-Layout: nur html und body.
@@ -17,7 +20,10 @@ export const viewport: Viewport = {
  */
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang={SPRACHE} className={`${schriftText.variable} ${schriftUeberschrift.variable}`}>
+    <html lang={SPRACHE} className={`${schriftText.variable} ${schriftUeberschrift.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_SKRIPT }} />
+      </head>
       <body>{children}</body>
     </html>
   );

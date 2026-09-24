@@ -30,7 +30,7 @@ export function Kontaktformular({ daten: d, einstellungen: e }: { daten: BlockDa
             <h3 className="titel-3">{e.firmenname}</h3>
             <ul className="mt-6 space-y-5">
               <li className="flex gap-4">
-                <MapPin className="mt-1 size-5 shrink-0 text-marke" aria-hidden />
+                <MapPin className="mt-1 size-5 shrink-0 text-akzent" aria-hidden />
                 <span>
                   {e.strasse}
                   <br />
@@ -38,20 +38,20 @@ export function Kontaktformular({ daten: d, einstellungen: e }: { daten: BlockDa
                 </span>
               </li>
               <li className="flex gap-4">
-                <Phone className="mt-1 size-5 shrink-0 text-marke" aria-hidden />
-                <a href={`tel:${e.telefon.replaceAll(' ', '')}`} className="inline-block py-1 hover:text-marke">
+                <Phone className="mt-1 size-5 shrink-0 text-akzent" aria-hidden />
+                <a href={`tel:${e.telefon.replaceAll(' ', '')}`} className="inline-block py-1 hover:text-akzent">
                   {e.telefon}
                 </a>
               </li>
               <li className="flex gap-4">
-                <Mail className="mt-1 size-5 shrink-0 text-marke" aria-hidden />
-                <a href={`mailto:${e.email}`} className="inline-block py-1 break-all hover:text-marke">
+                <Mail className="mt-1 size-5 shrink-0 text-akzent" aria-hidden />
+                <a href={`mailto:${e.email}`} className="inline-block py-1 break-all hover:text-akzent">
                   {e.email}
                 </a>
               </li>
               {e.oeffnungszeiten.length > 0 ? (
                 <li className="flex gap-4">
-                  <Clock className="mt-1 size-5 shrink-0 text-marke" aria-hidden />
+                  <Clock className="mt-1 size-5 shrink-0 text-akzent" aria-hidden />
                   <dl className="space-y-2">
                     {e.oeffnungszeiten.map((z) => (
                       <div key={z.tage}>

@@ -1,53 +1,64 @@
 ---
 name: Apple Property Group AG
-description: Inhabergeführtes Immobilienunternehmen am Bodensee, ruhiges Rose-Gold-Design ohne Makler-Glanz
+description: Die Vitrine, ein dunkler Ausstellungsraum, in dem jedes Projekt gerahmt und beleuchtet wie ein einzelnes Stück liegt. Dunkel ist der Standardmodus der ganzen Website, ein Umschalter in der Kopfzeile führt zu einem hellen Modus.
 colors:
-  weathered-rose-gold: "#9a5c4a"
-  weathered-rose-gold-deep: "#7a4839"
-  rose-gold-blush: "#f3e5de"
-  paper-white: "#ffffff"
-  warm-linen: "#f6f2ef"
-  warm-linen-line: "#e6ded8"
-  espresso-ink: "#1c1714"
-  warm-taupe: "#5b524c"
-  espresso-charcoal: "#1c1512"
-  espresso-charcoal-raised: "#251c18"
-  espresso-line: "#362a24"
-  linen-mist: "#f5f1ee"
-  taupe-mist: "#bdb0a8"
+  marke: "#9a5c4a"
+  marke-dunkel: "#7a4839"
+  marke-hell: "#f3e5de"
+  gold: "#cda27a"
+  gold-dunkel: "#a97f56"
+  akzent: "#cda27a"
+  akzent-dunkel: "#a97f56"
+  akzent-hell-modus: "#9a5c4a"
+  akzent-dunkel-hell-modus: "#7a4839"
+  grund: "#2c2319"
+  flaeche: "#352a20"
+  text: "#f3ece3"
+  text-leise: "#a8927c"
+  linie: "#4c3b2c"
+  grund-hell-modus: "#ffffff"
+  flaeche-hell-modus: "#faf6f0"
+  text-hell-modus: "#1c1714"
+  text-leise-hell-modus: "#5b524c"
+  linie-hell-modus: "#e6ded8"
+  flaeche-dunkel: "#100b08"
+  flaeche-dunkel-2: "#15100d"
+  text-hell: "#f3ece3"
+  text-hell-leise: "#a8927c"
+  linie-dunkel: "#2c2119"
 typography:
   display:
-    fontFamily: "Titillium Web, ui-sans-serif, system-ui, sans-serif"
-    fontWeight: 700
-    lineHeight: 1.12
-    letterSpacing: "-0.02em"
+    fontFamily: "Cormorant, ui-serif, Georgia, serif"
+    fontWeight: 600
+    lineHeight: 1.08
+    letterSpacing: "-0.01em"
   body:
     fontFamily: "Inter, ui-sans-serif, system-ui, sans-serif"
     fontWeight: 400
     lineHeight: 1.7
 rounded:
-  button: "4px"
-  card: "6px"
+  button: "3px"
+  card: "4px"
 spacing:
   section-sm: "3rem"
   section-md: "4rem"
   section-lg: "5rem"
 components:
   button-primary:
-    backgroundColor: "{colors.weathered-rose-gold}"
-    textColor: "{colors.paper-white}"
+    backgroundColor: "{colors.marke}"
+    textColor: "{colors.grund}"
     rounded: "{rounded.button}"
     padding: "14px 28px"
   button-primary-hover:
-    backgroundColor: "{colors.weathered-rose-gold-deep}"
+    backgroundColor: "{colors.marke-dunkel}"
   button-secondary:
     backgroundColor: "transparent"
-    textColor: "{colors.espresso-ink}"
+    textColor: "{colors.text}"
     rounded: "{rounded.button}"
     padding: "14px 28px"
-  button-ghost:
+  button-on-dark:
     backgroundColor: "transparent"
-    textColor: "{colors.paper-white}"
+    textColor: "{colors.text-hell}"
     rounded: "{rounded.button}"
     padding: "14px 28px"
 ---
@@ -56,119 +67,115 @@ components:
 
 ## Overview
 
-**Creative North Star: "Quiet Rose Gold"**
+**Creative North Star: "Die Vitrine"**
 
-The site reads like a well-run, owner-led business, not a real-estate brochure. Rose gold is a rare, precise accent, never a wash: one button, one line under an eyebrow label, one hover state at a time. Everything else sits on paper white or a warm linen tint, set in a crisp, no-nonsense grid that lets the actual project photography (real renders and real rooms, never stock) carry the emotional weight. Corners are barely rounded, shadows only appear as a response to scrolling or hovering, and nothing glows, gradients only exist to keep white hero text readable over a photo.
+Jedes Projekt liegt wie ein einzelnes Schmuckstück in einer eigenen Vitrine: gerahmt von einer dünnen Blattgoldlinie, unter einem weichen Lichtkreis, auf tiefem, samtigem Schwarzbraun. Das System übersetzt die Sprache von Cartier, Tiffany und Rolex, nicht als Farbwechsel, sondern als Materialwechsel: Wo die Vorlage bisher flache Kacheln auf hellem Grund zeigte, hängt jetzt jedes Bild in einem eigenen, beleuchteten Rahmen.
 
-Confirmed anti-reference: a generic glossy real-estate broker site, stock-photo families, exclamation-mark sales copy, and glossy colour gradients as decoration. This system explicitly rejects all of that.
+Seit dem 23. September 2026 ist Dunkel der Standardmodus der ganzen Website, nicht nur einzelner Abschnitte. Ein nicht aufdringlicher Umschalter in der Kopfzeile (`ThemeUmschalter.tsx`, Mond- und Sonnensymbol) führt zu einem hellen Modus, die Wahl bleibt in `localStorage` gemerkt. Technisch trägt jede Farbe, die sich mit dem Modus ändert, den Namen `--color-akzent` und ihre Neutraltöne (`grund`, `flaeche`, `text`, `text-leise`, `linie`): im dunklen Standardmodus ist Akzent das Blattgold, im hellen Modus die reale Signetfarbe. Das reale Firmensignet hat einen echten transparenten Hintergrund (kein weisser Kasten) und funktioniert deshalb unverändert auf beiden Flächen, `logo` und `logohell` in Keystatic zeigen bewusst auf dieselbe Datei. Die "Vitrine" selbst, also Hero, Projektkarten, Team und Fusszeile, bleibt unabhängig vom Umschalter immer dunkel (`--color-flaeche-dunkel`), das ist die eine Konstante, um die sich der Rest des Systems dreht. Überschriften sind durchgängig in Cormorant, einer feinen, gravierten Serife, wie eine Gravur auf einer Plakette.
+
+Bestätigte Abgrenzung: keine vollflächigen Farbbänder, kein Baukasten-Rahmen um Karten, keine Stockfotografie, keine erfundenen Kennzahlen oder Kundenstimmen. Was hier steht, ist immer echt: echte Projekte, echtes Team, echte Adresse.
 
 **Key Characteristics:**
-- One accent colour (Weathered Rose Gold) used sparingly, never as a background wash
-- Flat-by-default surfaces; shadows appear only on hover, scroll, or open state
-- Very shallow corner radii (4 to 6px), "angular, not playful"
-- A very wide content column (max 2400px) instead of a boxed 1280px layout
-- Real project photography full-bleed in heroes and cards, no illustration, no stock imagery
+- Jedes Bild liegt in einem eigenen goldgerahmten Fenster mit weichem Lichtkreis dahinter, nie als flächiges Hintergrundbild
+- Dunkel ist der Standardmodus der ganzen Website, ein nicht aufdringlicher Umschalter in der Kopfzeile führt zu Hell
+- Die Vitrine selbst (Hero, Projekte, Team, Fusszeile) bleibt in beiden Modi immer dunkel, das ist die feste Bühne
+- Cormorant für Überschriften (eine gravierte Serife), Inter für Fliesstext und Bedienelemente
+- Rose Gold (helle Signetfarbe) und Blattgold (dunkler Modus) sind dieselbe Familie, gesteuert über einen einzigen Akzent-Token
+- Präzise, knappe Kanten (3 bis 4 px), keine weichen Baukasten-Rundungen
 
 ## Colors
 
-Restrained: a single warm accent against paper white and one warm linen tint, with a warm espresso-charcoal for dark sections instead of pure black.
+Ein Akzent-Token, zwei Stimmungen: Blattgold im dunklen Standardmodus, Signet-Braun im hellen Modus, dieselbe Rose-Gold-Herkunft. Dazu eine feste, immer dunkle Bühne für die Vitrine selbst.
 
 ### Primary
-- **Weathered Rose Gold** (`#9a5c4a`): the one accent colour. Primary buttons, active nav links, link hover, focus rings, the small rule above eyebrow labels, category tags on project cards. Contrast against white is 5.24:1, safe for white-on-accent text.
-- **Weathered Rose Gold Deep** (`#7a4839`): hover/active state for the primary accent, never used as a resting colour.
-- **Rose Gold Blush** (`#f3e5de`): reserved light tint for the accent's "hell" role (badges on dark, quiet backgrounds); currently under-used in the shipped screens but defined for that purpose.
+- **Akzent** (dunkler Modus `#cda27a` Blattgold, heller Modus `#9a5c4a` Signet-Braun): Primärlinks, Fokusringe, Labels, Hover-Akzente auf Flächen, die mit dem Umschalter wechseln.
+- **Akzent Dunkel** (dunkler Modus `#a97f56`, heller Modus `#7a4839`): Hover-Zustand von Akzent-Elementen.
+- **Signet-Braun** (`#9a5c4a`, fest): die reale Farbe des Firmenzeichens, unabhängig vom Modus. Trägt den gefüllten Primärknopf (`knopf-primaer`), damit die Handlungsaufforderung immer dieselbe, wiedererkennbare Markenfarbe zeigt.
+- **Blattgold** (`#cda27a`, fest): dieselbe Farbfamilie, für Stellen, die unabhängig vom Umschalter immer dunkel sind (Vitrinen-Rahmenlinien, `vitrine-plakette`, Fokusringe innerhalb dunkler Abschnitte).
 
 ### Neutral
-- **Paper White** (`#ffffff`): default page background.
-- **Warm Linen** (`#f6f2ef`): section background for alternating bands (project grid, fact boxes, page-header strips), never pure grey.
-- **Warm Linen Line** (`#e6ded8`): hairline dividers and borders on light surfaces.
-- **Espresso Ink** (`#1c1714`): default body and heading text on light surfaces. Warm near-black, never `#000`.
-- **Warm Taupe** (`#5b524c`): secondary/muted text (captions, meta rows, labels).
-- **Espresso Charcoal** (`#1c1512`): dark section background (footer, hero underlay before the photo loads, dark call-to-action band never used, that band uses the accent instead).
-- **Espresso Charcoal Raised** (`#251c18`): secondary dark surface, one step lighter than Espresso Charcoal.
-- **Espresso Line** (`#362a24`): hairline dividers on dark surfaces.
-- **Linen Mist** (`#f5f1ee`) / **Taupe Mist** (`#bdb0a8`): primary/secondary text on dark surfaces, mirroring Espresso Ink / Warm Taupe's roles in light mode.
+- **Grund** (dunkler Modus `#2c2319`, heller Modus `#ffffff`): Seitenhintergrund, wechselt mit dem Umschalter.
+- **Fläche** (dunkler Modus `#352a20`, heller Modus `#faf6f0`): leicht abgesetzte Abschnittsfläche.
+- **Text** (dunkler Modus `#f3ece3`, heller Modus `#1c1714`) / **Text Leise** (dunkler Modus `#a8927c`, heller Modus `#5b524c`): Fliesstext, wechselt mit dem Umschalter.
+- **Linie** (dunkler Modus `#4c3b2c`, heller Modus `#e6ded8`): Trennlinien und Feldrahmen, wechselt mit dem Umschalter.
+- **Vitrinen-Samt** (`#100b08`) / **Vitrinen-Samt Erhöht** (dunkler Modus `#15100d`, heller Modus `#1d1712`): die feste, immer dunkle Bühne für Hero, Projekte, Team und Fusszeile, unabhängig vom Umschalter. Bewusst deutlich dunkler als Grund/Fläche im Dunkelmodus (seit dem Polish-Durchgang vom 23. September 2026), damit Foyer und Vitrine auch im Dunkelmodus als zwei unterscheidbare Räume wirken, nicht nur im hellen Modus.
+- **Text Creme** (`#f3ece3`) / **Text Creme Leise** (`#a8927c`): Text auf der Vitrinen-Bühne, fest in beiden Modi.
 
 ### Named Rules
-**The One Accent Rule.** Weathered Rose Gold appears as a fill on at most one element per view (the primary button or the active nav state). Everywhere else it is a line, a label, or a hover colour, never a block of colour behind a whole section.
+**Die Rahmen-Regel.** Ein Projektbild bekommt nie ein volles Hintergrundbild mit Text darüber. Es liegt immer gerahmt (`.vitrine-rahmen`) mit Lichtkreis (`.vitrine-licht`) auf dunklem Samt, so wie ein Stück in einer Vitrine liegt, nie wie eine Tapete.
+
+**Die Bühnen-Regel.** Hero, Projektkarten, Team und Fusszeile bleiben in beiden Modi immer dunkel (`.bg-flaeche-dunkel`). Nur die Flächen dazwischen (Kopfzeile, Lesetexte, Formulare, rechtliche Seiten) folgen dem Umschalter, mit einem spürbar helleren Wert als die Vitrinen-Bühne. So bleibt die Vitrine selbst immer die Bühne, in beiden Modi als eigener, dunklerer Raum erkennbar.
 
 ## Typography
 
-**Display Font:** Titillium Web (with ui-sans-serif, system-ui fallback)
-**Body Font:** Inter (with ui-sans-serif, system-ui fallback)
+**Display Font:** Cormorant (mit serifenloser Ersatzschrift Georgia)
+**Body Font:** Inter (mit ui-sans-serif, system-ui)
 
-**Character:** Titillium Web's squared, slightly technical letterforms at heavy weight (700/900) give headlines a confident, almost architectural presence without turning decorative; Inter stays completely neutral for body copy so long Swiss-German sentences stay easy to scan.
+**Character:** Cormorant ist eine feine, hochkontrastreiche Serife mit gravierter, klassischer Anmutung, wie eine Beschriftung auf einer Metallplakette. Inter bleibt vollkommen neutral für Fliesstext, Formulare und Navigation, damit lange Schweizerdeutsche Sätze lesbar bleiben.
 
 ### Hierarchy
-- **Display / titel-1** (700, `clamp` 2.25rem to 6rem, growing further above 2200px, line-height 1.12): page H1, once per page.
-- **Headline / titel-2** (700, 1.875rem to 3.75rem): section titles (H2).
-- **Title / titel-3** (600, 1.25rem to 1.875rem): card and sub-section titles (H3).
-- **Body / einleitung** (400, 1.125rem to 1.5rem, line-height 1.6, on `text-leise`): section intros directly under a headline.
-- **Body / default** (400, 1.0625rem desktop 1.125rem, line-height 1.7): running text.
-- **Label / ueberzeile** (600, small, `0.14em` tracking, uppercase, Weathered Rose Gold, preceded by an 8px horizontal rule): the small eyebrow line above a title.
+- **Display / titel-1** (600, 2.25rem bis 6rem, wächst weiter ab 2200 px, Zeilenhöhe 1.08): H1, einmal pro Seite.
+- **Headline / titel-2** (600, 1.875rem bis 3.75rem): Abschnittstitel.
+- **Title / titel-3** (600, 1.25rem bis 1.875rem): Karten- und Unterabschnittstitel.
+- **Label / vitrine-plakette** (600, sehr klein, `0.2em` Tracking, Blattgold, Grossbuchstaben): Beschriftung wie auf einer Vitrinenplakette, ersetzt die Überzeile in dunklen Abschnitten.
+- **Label / ueberzeile** (600, klein, `0.24em` Tracking, Signet-Braun, mit horizontaler Linie davor): dieselbe Rolle auf hellen Flächen.
 
 ### Named Rules
-**The Hyphenation Rule.** Long compound German words (`Elektroinstallateur/in`) are allowed to hyphenate (`hyphens: auto`) on narrow screens instead of overflowing; this is load-bearing for German-language headlines and must not be turned off.
+**Die Trennungs-Regel.** Silbentrennung bleibt für lange deutsche Wörter aktiv (`hyphens: auto`, `hyphenate-limit-chars: 9 4 4`), tragend für deutschsprachige Überschriften, darf nicht abgeschaltet werden. Bewusst kein `overflow-wrap: break-word` auf Überschriften: dieser Notfall-Umbruch ignoriert `hyphenate-limit-chars` und kann zusammen mit `text-balance` ein einzelnes Zeichen auf der letzten Zeile abspalten (seit dem Polish-Durchgang vom 23. September 2026 entfernt).
 
 ## Layout
 
-Full-bleed sections at `py-16` (mobile) to `py-24` (desktop) for standard blocks, `py-12`/`py-16` for compact bands (logo strips), `py-20`/`py-32` for header-less pages (legal pages, error page). A single content wrapper, `container-seite`, centres everything at a **2400px max width** with 24/32/48px side padding (mobile/tablet/desktop), deliberately much wider than the common 1280px container so the layout does not feel like a generic template on large monitors. Long-form text is separately clamped to 72 characters (`lesebreite`) inside that wide wrapper so paragraphs stay readable. An extra `3xl` breakpoint at 2200px lets titles and intros grow one step further on very large screens instead of leaving dead margin. Card grids never leave a dangling empty column: a 4-item grid only goes to 4 columns at the point where 4 divides evenly, otherwise it holds at 3.
+Unverändert von der InfraOne-Vorlage: `container-seite` bis 2400 px Breite, `abschnitt` (64 bis 96 px), `abschnitt-kompakt` und `abschnitt-gross` als einzige vertikale Abstände. Lesetexte bleiben mit `.lesebreite` (72 Zeichen) begrenzt. Neu ist die Raumfolge: jeder Abschnitt entscheidet sich bewusst für Foyer (hell) oder Vitrine (dunkel), im Wechsel, nie zwei dunkle Abschnitte ohne einen hellen dazwischen, ausser wenn eine Vitrine direkt in die nächste übergeht (z. B. Bildergalerie in "Weitere Referenzen").
 
 ## Elevation & Depth
 
-Flat by default. Surfaces carry no resting shadow; depth appears only as a direct response to state; a sticky header raises a soft shadow once the page scrolls past the top, a project card's image scales up 4% on hover instead of lifting, and an open dropdown menu or the hero's framed image get one soft shadow because they visually float above the page.
-
-### Shadow Vocabulary
-- **Header-scrolled** (`box-shadow: 0 8px 30px -12px rgba(0,0,0,0.12)`): sticky header once the page has scrolled, paired with a blurred, semi-transparent background.
-- **Dropdown / menu-panel** (Tailwind `shadow-xl`): open navigation submenus and mega-menu panels.
-- **Hero-framed-image** (`box-shadow: 0 30px 80px -30px rgba(0,0,0,0.35)`): the framed photo in the split-layout hero variant, the one deliberately "lifted" element on the site.
+Kein Schatten als Dekoration. Die einzige Tiefe ist das Licht der Vitrine selbst: ein weicher, radialer Goldschimmer hinter jedem gerahmten Bild (`.vitrine-licht`), dazu ein tiefer, weicher Schatten unter dem Rahmen selbst, der das Bild vom Samt abhebt. Der Kopfzeilen-Schatten erscheint nur beim Scrollen, wie zuvor.
 
 ### Named Rules
-**The Response-Only Shadow Rule.** A shadow only ever appears because of scroll position, hover, or an open/closed state. No card, button, or section carries a shadow at rest.
+**Die Ein-Licht-Regel.** Jede Vitrine hat genau einen Lichtkreis hinter dem gerahmten Objekt. Kein zweites Leuchten, kein Glühen an Kanten, die kein Rahmen sind.
 
 ## Shapes
 
-Corners are deliberately shallow: 4px on buttons, 6px on cards and image frames, both far short of the rounded-2xl look of typical template sites. The brief for this is explicit in code: "eher kantig als verspielt" (angular rather than playful), chosen so the site reads as a sachlich (matter-of-fact) real-estate developer rather than a consumer app. Borders are 1px hairlines in Warm Linen Line (light) or Espresso Line (dark), never heavier. No clipping, blob shapes, or decorative geometry anywhere in the system.
+Knapp und graviert statt weich gerundet: 3 px Knöpfe, 4 px Karten und Rahmen, näher an einer Vitrinenkante als an einer App-Kachel. Der Goldrahmen selbst ist eine 1-px-Linie (`border-gold/55`, seit dem Polish-Durchgang vom 23. September 2026 kräftiger als zuvor, damit er auch im Ruhezustand sichtbar ist), nie eine breite Umrandung.
 
 ## Components
 
 ### Buttons
-- **Shape:** 4px radius (`--radius-knopf`), minimum 48px/56px tap height (mobile/desktop).
-- **Primary:** Weathered Rose Gold fill, white text, 14px/28px padding scaling up on desktop; hover darkens to Weathered Rose Gold Deep.
-- **Secondary:** transparent, 1px border in the current text colour, hover fills with Espresso Ink and flips text to white. Used on light backgrounds only.
-- **Ghost (on image):** transparent with a 40%-opacity white border for use over hero photography; hover fills solid white with Espresso Ink text. This is the only button variant allowed directly on a photograph.
+- **Primär:** Signet-Braun gefüllt, weisser Text. Innerhalb der festen Vitrinen-Bühne (`.bg-flaeche-dunkel`, z. B. Hero) zusätzlich mit einem dünnen Goldrand (`border-gold/60`), damit die wichtigste Handlung an die Vitrinen-Sprache anknüpft statt als reines Nutzbraun neben dem Goldrahmen der Bilder zu stehen (seit dem Polish-Durchgang vom 23. September 2026). Auf Foyer-Flächen (z. B. Kontaktaufruf) bleibt er ohne Goldrand.
+- **Sekundär:** transparent, Rahmen in der aktuellen Textfarbe, Hover füllt dunkel.
+- **Auf dunklem Samt (`knopf-hell`):** transparent mit halbtransparentem Goldrahmen, Hover füllt volles Gold mit dunklem Text. Ersetzt die frühere weisse Fotorahmen-Variante.
 
-### Cards (project / reference tiles)
-- **Corner Style:** 6px radius (`--radius-karte`).
-- **Background:** Warm Linen behind the image placeholder; no border, no shadow at rest.
-- **Image:** 4:3 crop, scales to 104% on hover (700ms ease-out), the only "lift" affordance a card has.
-- **Meta row:** category (Weathered Rose Gold, semibold) · location · month/year, in Warm Taupe.
-- **Title / description:** titel-3 heading, two-line-clamped description underneath in Warm Taupe.
+### Vitrinen-Karten (Projekte, Team)
+- **Titel:** `.titel-3`, auch für Team-Namen (seit dem Typografie-Durchgang vom 24. September 2026 vereinheitlicht, vorher ein undokumentierter Einzelwert kleiner als jede Titel-Rolle).
+- **Rahmen:** `.vitrine-rahmen`, eine 1-px-Goldlinie mit tiefem Schatten nach aussen.
+- **Licht:** `.vitrine-licht`, ein radialer Goldschimmer hinter dem Rahmen (32 % Deckkraft, seit dem Polish-Durchgang vom 23. September 2026 kräftiger). Bei Hero- und Team-Bildern dauerhaft sichtbar. Bei Projektkarten seit demselben Durchgang ebenfalls bereits im Ruhezustand sichtbar (70 % Deckkraft) und beim Hover auf volle Stärke verstärkt, statt vorher rein Hover-only, damit das Vitrinen-Konzept ohne Interaktion lesbar ist.
+- **Bild:** 4:3 (Projekte, Team im Hochformat 4:5), sanfter 4-%-Zoom beim Hover.
+- **Meta-Zeile:** Kategorie in Blattgold, Ort, Datum in gedämpftem Creme, mit fester Mindesthöhe, damit lange Ortsnamen (z. B. Kradolf-Schönenberg) die Titelzeile nicht verschieben.
 
-### Inputs / Fields
-- **Style:** 1px Warm Linen Line border, white fill, `rounded-md`, comfortable 12px/16px padding.
-- **Focus:** border switches to Weathered Rose Gold plus a 25%-opacity Weathered Rose Gold focus ring (`ring-2`).
-- **Placeholder:** Warm Taupe at 70% opacity.
+### Hero (Signaturkomponente)
+Zwei Varianten, dieselbe Dramaturgie: Titel kündigt an, das gerahmte Bild löst ein, der Knopf lädt ein. **Vollbild** (Startseite): zentrierter Text über dem Bild, das Bild liegt darunter gerahmt und beleuchtet, nicht als Hintergrund. **Geteilt** (Unterseiten): Text links auf Samt, Bild rechts gerahmt.
 
-### Navigation
-- **Style:** sticky header, transparent over the page until scrolled, then a blurred, near-opaque Paper White bar with the header-scrolled shadow. Logo left, links centred/right, phone number and a Weathered-Rose-Gold "Kontakt" button on the far right (desktop only above 1280px).
-- **States:** the active route's link and any open dropdown trigger turn Weathered Rose Gold; a mega-menu (3+ sub-items) opens as a two-column panel with a 2px Weathered Rose Gold top border; a short submenu opens as a plain single-column list.
-- **Mobile:** a full-height off-canvas panel (300ms slide/fade), the same nav links stacked large, with the phone number and Kontakt button repeated inside it; Escape closes it and returns focus to the trigger.
+### Formulare
+Felder folgen dem Umschalter (`bg-grund`, `border-linie`, Fokusrahmen in Akzent), damit sie sich immer von der Seite abheben, egal ob Hell oder Dunkel gewählt ist. Fehler- und Testhinweis-Meldungen sind halbtransparent eingefärbt (`bg-red-500/10`, `bg-amber-500/10`) statt fest pastellfarben hinterlegt, damit sie im dunklen Standardmodus nicht als grelle weisse Fläche wirken.
 
-### Hero (signature component)
-Two variants sharing one rhythm: **Vollbild** (full-bleed photo, directional black gradient for legible white text, used for the homepage and any page that should feel like an opener) and **Geteilt** (text on a quiet Warm Linen field with a faint 64px grid pattern behind it, photo framed right with the hero-framed-image shadow, used for interior pages like "Über uns"). Both fade their text block in on load (`animate-einblenden`, 700ms, no scroll trigger since it is above the fold).
+### Galerie (Karussell)
+`Galerie.tsx`: der Bild-Hero der Projekt-Detailseite. Titelbild und alle Galeriebilder aus Keystatic bilden zusammen ein Karussell (kein separates Titelbild mehr über einer eigenen "Bilder"-Sektion, seit dem 24. September 2026 zusammengeführt). Ein Bild pro Ansicht im `.vitrine-rahmen` mit `.vitrine-licht`, scrollt nativ per Scroll-Snap (Touch, Trackpad), dazu Pfeil-Knöpfe, Punkte und ein Zähler ("2 / 8") als gleichwertige, tastaturbedienbare Kontrollen (Pfeiltasten, wenn das Karussell fokussiert ist). Bei genau einem Bild (kein Galeriebild vorhanden) fallen Pfeile, Punkte und Zähler weg, es bleibt beim einzelnen gerahmten Titelbild wie zuvor.
+
+### Umschalter
+`ThemeUmschalter.tsx` in der Kopfzeile, Mondsymbol im dunklen, Sonnensymbol im hellen Modus, 44 px Klickfläche, `aria-pressed` und beschreibendes `aria-label`. Setzt `data-theme="light"` auf `<html>` und merkt die Wahl in `localStorage`. Ein kleines Inline-Skript in `layout.tsx` setzt das Attribut bereits vor dem ersten Rendern, damit beim Laden kein Farbwechsel-Blitz sichtbar wird.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** keep Weathered Rose Gold to one filled element per screen; everywhere else use it as a line, label, or hover state (The One Accent Rule).
-- **Do** use real project photography full-bleed in heroes and cards; never stock photography or illustration.
-- **Do** keep radii shallow (4px buttons, 6px cards); never jump to fully rounded ("pill") buttons or large `rounded-2xl` cards.
-- **Do** let shadows appear only in response to scroll, hover, or open state (The Response-Only Shadow Rule).
-- **Do** keep the content wrapper at up to 2400px; a narrower, centred 1280px container is the generic-template look this system exists to avoid.
+- **Do** jedes Projektbild in einem Goldrahmen mit Lichtkreis zeigen (`.vitrine-rahmen` + `.vitrine-licht`), nie als flächiges Hintergrundbild.
+- **Do** neue Textfarben, Ränder und Hintergründe über die Token `akzent`, `grund`, `flaeche`, `text`, `text-leise`, `linie` setzen, nie über feste Tailwind-Farben wie `bg-white` oder `text-marke`, sonst reagieren sie nicht auf den Umschalter.
+- **Do** die Vitrinen-Bühne (Hero, Projekte, Team, Fusszeile) immer dunkel halten (`.bg-flaeche-dunkel`), unabhängig vom Umschalter.
+- **Do** Cormorant nur für Überschriften verwenden, Inter für alles Bedienbare und Lesbare.
+- **Do** Fokusringe: Akzentfarbe als Standard, Gold nur innerhalb von `.bg-flaeche-dunkel`- oder `.text-text-hell`-Abschnitten.
 
 ### Don't:
-- **Don't** fill a whole section, card, or hero background with the accent colour; it reads as a coupon banner, not a developer's site.
-- **Don't** add drop shadows, glows, or gradients as decoration; the only permitted gradient is the black overlay behind hero text on a photo.
-- **Don't** write sales-brochure copy (exclamation marks, "Jetzt anfragen!", superlatives); the tone is Swiss-German, factual, and trustworthy, matching PRODUCT.md's voice commitment.
-- **Don't** invent stats, testimonials, or team photos that are not confirmed; empty states (no photo) render a plain outline person icon, never a placeholder stock headshot.
+- **Don't** ein Projektbild vollflächig mit Text darüber legen, das ist die Vorlagen-Optik, die dieses System ersetzt.
+- **Don't** eine ganze Sektion mit der Akzentfarbe füllen, weder Braun noch Gold, die Vitrine lebt vom Kontrast zwischen Rahmen und Samt.
+- **Don't** ein zweites Leuchten oder einen zweiten Schatten neben dem Vitrinenlicht hinzufügen.
+- **Don't** Kennzahlen, Kundenstimmen oder Teamfotos erfinden, die nicht bestätigt sind.
+- **Don't** annehmen, das Logo brauche einen hellen Hintergrund. Die Datei hat einen echten transparenten Hintergrund und funktioniert auf Hell und Dunkel gleichermassen.

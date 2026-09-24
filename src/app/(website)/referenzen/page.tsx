@@ -14,9 +14,9 @@ export default async function ReferenzenSeite() {
   return (
     <>
       <Seitenkopf ueberzeile={u.ueberzeile} titel={u.titel} einleitung={u.einleitung} pfad={[{ text: u.titel, href: '/referenzen' }]} />
-      <section className="abschnitt">
+      <section className="abschnitt bg-flaeche-dunkel text-text-hell">
         {referenzen.length === 0 ? (
-          <p className="container-seite einleitung">Die Referenzen werden zurzeit zusammengestellt.</p>
+          <p className="container-seite einleitung text-text-hell-leise">Die Referenzen werden zurzeit zusammengestellt.</p>
         ) : null}
         <div className={`container-seite ${rasterFuerKacheln(referenzen.length)} gap-y-14`}>
           {referenzen.map((r) => (
