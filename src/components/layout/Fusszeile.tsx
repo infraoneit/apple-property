@@ -25,7 +25,7 @@ export function Fusszeile({ einstellungen: e, navigation: n }: { einstellungen: 
         >
           <div className="max-w-md">
             {e.logohell ? (
-              <Image src={e.logohell} alt={e.firmenname} width={220} height={64} unoptimized={e.logohell.endsWith('.svg')} className="h-12 w-auto" />
+              <Image src={e.logohell} alt={e.firmenname} width={220} height={64} unoptimized={e.logohell.endsWith('.svg')} className="h-16 w-auto" />
             ) : (
               <p className="font-titel text-2xl font-semibold text-text-hell">{e.firmenname}</p>
             )}
