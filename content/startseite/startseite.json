@@ -6,8 +6,8 @@
       "value": {
         "titel": "Immobilien, die Werte schaffen. Von der Vision bis zur Realisierung.",
         "text": "Ganzheitliche Lösungen rund um Immobilien, mit Erfahrung, Leidenschaft und einem Anspruch an Qualität.",
-        "bild": "/bilder/startseite/bloecke/0/value/bild.jpg",
-        "bildAlt": "Architekturvisualisierung eines Mehrfamilienhauses mit Umgebungsgestaltung, ein Neubauprojekt der Apple Property Group AG",
+        "bild": "/bilder/startseite/bloecke/0/value/bild-nacht.jpg",
+        "bildAlt": "Architekturvisualisierung von drei Einfamilienhäusern in der Abenddämmerung, ein Neubauprojekt der Apple Property Group AG in Kreuzlingen",
         "knopfPrimaer": {
           "text": "Immobilien erkunden",
           "link": "/referenzen"
@@ -48,7 +48,7 @@
         "text": "Wir beantworten Ihre Fragen zu Kauf, Miete oder einem eigenen Immobilienprojekt.",
         "knopf": {
           "text": "Anfrage senden",
-          "link": "/kontakt"
+          "link": "mailto:info@apple-group.ch"
         },
         "telefonZeigen": true
       }

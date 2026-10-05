@@ -129,8 +129,15 @@ export function Kopfzeile({ firmenname, logo, telefon, menue, knopf }: Props) {
         >
           Zum Inhalt springen
         </a>
-        <div className="container-seite grid h-20 grid-cols-[1fr_auto_1fr] items-center gap-4 lg:h-24 3xl:h-28">
-          <Link href="/" className="flex shrink-0 items-center" aria-label={`${firmenname}, zur Startseite`}>
+        <div className="container-seite flex h-20 items-center justify-between gap-4 lg:grid lg:h-24 lg:grid-cols-[1fr_auto_1fr] 3xl:h-28">
+          <Link
+            href="/"
+            className="flex shrink-0 items-center lg:justify-self-start"
+            aria-label={`${firmenname}, zur Startseite`}
+            onClick={() => {
+              window.scrollTo({ top: 0, behavior: pfad === '/' ? 'smooth' : 'instant' });
+            }}
+          >
             {logo ? (
               <Image
                 src={logo}
@@ -139,7 +146,7 @@ export function Kopfzeile({ firmenname, logo, telefon, menue, knopf }: Props) {
                 height={80}
                 loading="eager"
                 unoptimized={logo.endsWith('.svg')}
-                className="h-12 w-auto lg:h-16 3xl:h-20"
+                className="h-[4.32rem] w-auto lg:h-[5.76rem] 3xl:h-[6.75rem]"
               />
             ) : (
               <span className="font-titel text-xl font-extrabold tracking-tight lg:text-2xl">{firmenname}</span>

@@ -25,7 +25,7 @@ export async function ReferenzenBlock({ daten: d }: { daten: BlockDaten<'referen
         />
         <div className={cn('grid gap-x-8 gap-y-12 sm:grid-cols-2', anzahl === 3 ? 'lg:grid-cols-3' : anzahl === 4 ? 'lg:grid-cols-2 xl:grid-cols-4' : 'lg:grid-cols-3')}>
           {referenzen.map((r) => (
-            <ReferenzKarte key={r.slug} referenz={r} />
+            <ReferenzKarte key={r.slug} referenz={r} ortUndDatum={false} />
           ))}
         </div>
       </div>

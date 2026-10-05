@@ -313,6 +313,16 @@ export function seitenBloecke(bildOrdner: string) {
           kontaktdatenZeigen: fields.checkbox({ label: 'Adresse, Telefon und Öffnungszeiten daneben zeigen', defaultValue: true }),
         }),
       },
+
+      standortkarte: {
+        label: 'Standortkarte (Google Maps)',
+        itemLabel: (p) => p.fields.titel.value || 'Standortkarte',
+        schema: fields.object({
+          titel: text('Titel', { pflicht: true, max: 90 }),
+          text: langtext('Text', { max: 400 }),
+          kontaktdatenZeigen: fields.checkbox({ label: 'Adresse, Telefon und Öffnungszeiten daneben zeigen', defaultValue: true }),
+        }),
+      },
     },
     { label: 'Abschnitte', description: 'Jeder Abschnitt ist ein Bereich auf der Seite. Die Reihenfolge lässt sich durch Ziehen ändern.' }
   );

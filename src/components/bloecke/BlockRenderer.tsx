@@ -15,6 +15,7 @@ import { Kundenstimmen } from './Kundenstimmen';
 import { Faq } from './Faq';
 import { Kontaktaufruf } from './Kontaktaufruf';
 import { Kontaktformular } from './Kontaktformular';
+import { Standortkarte } from './Standortkarte';
 
 type Props = {
   bloecke: readonly Block[];
@@ -81,6 +82,8 @@ export function BlockRenderer({ bloecke, einstellungen, seitentitel, hatSeitenko
             return <Kontaktaufruf key={key} daten={block.value} einstellungen={einstellungen} />;
           case 'kontaktformular':
             return <Kontaktformular key={key} daten={block.value} einstellungen={einstellungen} />;
+          case 'standortkarte':
+            return <Standortkarte key={key} daten={block.value} einstellungen={einstellungen} />;
           default:
             return nieErreicht(block);
         }

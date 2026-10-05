@@ -9,12 +9,14 @@
       "text": "Über uns",
       "link": "/ueber-uns",
       "unterpunkte": []
+    },
+    {
+      "text": "Kontakt",
+      "link": "/kontakt",
+      "unterpunkte": []
     }
   ],
-  "knopf": {
-    "text": "Kontakt",
-    "link": "/kontakt"
-  },
+  "knopf": {},
   "fusszeile": [
     {
       "text": "Projekte",
@@ -37,6 +39,10 @@
     {
       "text": "Datenschutz",
       "link": "/datenschutz"
+    },
+    {
+      "text": "AGB",
+      "link": "/agb"
     }
   ]
 }

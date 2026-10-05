@@ -20,7 +20,7 @@ const THEME_SKRIPT = `try{if(localStorage.getItem('theme')==='light')document.do
  */
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang={SPRACHE} className={`${schriftText.variable} ${schriftUeberschrift.variable}`} suppressHydrationWarning>
+    <html lang={SPRACHE} className={`${schriftText.variable} ${schriftUeberschrift.variable}`} data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_SKRIPT }} />
       </head>

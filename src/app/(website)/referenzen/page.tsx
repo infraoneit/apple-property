@@ -20,7 +20,7 @@ export default async function ReferenzenSeite() {
         ) : null}
         <div className={`container-seite ${rasterFuerKacheln(referenzen.length)} gap-y-14`}>
           {referenzen.map((r) => (
-            <ReferenzKarte key={r.slug} referenz={r} titelEbene="h2" />
+            <ReferenzKarte key={r.slug} referenz={r} titelEbene="h2" ortUndDatum={false} />
           ))}
         </div>
       </section>

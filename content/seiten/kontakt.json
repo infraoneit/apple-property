@@ -3,21 +3,14 @@
   "inSitemap": true,
   "seo": {
     "titel": "Kontakt",
-    "beschreibung": "Kontaktieren Sie die Apple Property Group AG in Tägerwilen für Fragen zu Kauf, Verkauf oder Vermietung von Immobilien."
+    "beschreibung": "Kontakt und Standort der Apple Property Group AG in Tägerwilen: Adresse, Telefon, E-Mail und Karte."
   },
   "bloecke": [
     {
-      "discriminant": "kontaktformular",
+      "discriminant": "standortkarte",
       "value": {
-        "titel": "Haben Sie ein Projekt im Sinn?",
-        "text": "Schildern Sie uns kurz Ihr Anliegen. Wir melden uns bei Ihnen.",
-        "betreffOptionen": [
-          "Kaufinteresse",
-          "Verkauf einer Immobilie",
-          "Vermietung",
-          "Allgemeine Frage"
-        ],
-        "bestaetigung": "Wir haben Ihre Anfrage erhalten und melden uns bei Ihnen.",
+        "titel": "So finden Sie uns",
+        "text": "Besuchen Sie uns in Tägerwilen oder rufen Sie uns an. Wir beantworten gerne alle Ihre Fragen persönlich.",
         "kontaktdatenZeigen": true
       }
     }

@@ -21,7 +21,18 @@ export function rasterFuerKacheln(anzahl: number) {
 }
 
 /** Jedes Projekt liegt wie ein einzelnes Stück in seiner eigenen Vitrine: gerahmt, mit einem Lichtkreis dahinter. */
-export function ReferenzKarte({ referenz: r, titelEbene = 'h3', sizes = KARTEN_SIZES }: { referenz: Referenz; titelEbene?: Ebene; sizes?: string }) {
+export function ReferenzKarte({
+  referenz: r,
+  titelEbene = 'h3',
+  sizes = KARTEN_SIZES,
+  ortUndDatum = true,
+}: {
+  referenz: Referenz;
+  titelEbene?: Ebene;
+  sizes?: string;
+  /** Ort und Datum unter dem Bild zeigen. Auf der Projektübersicht aus. */
+  ortUndDatum?: boolean;
+}) {
   const Titel = titelEbene;
   return (
     <article data-einblenden className="group relative flex flex-col">
@@ -31,10 +42,10 @@ export function ReferenzKarte({ referenz: r, titelEbene = 'h3', sizes = KARTEN_S
           <Image src={r.titelbild} alt={r.titelbildAlt} fill sizes={sizes} className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]" />
         </div>
       </div>
-      <div className="mt-5 flex min-h-10 flex-wrap items-center gap-x-3 gap-y-1 text-sm text-text-hell-leise">
+      <div className={cn('mt-5 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-text-hell-leise', ortUndDatum && 'min-h-10')}>
         {r.kategorie ? <span className="font-semibold text-gold">{r.kategorie}</span> : null}
-        {r.ort ? <span>{r.ort}</span> : null}
-        {r.datum ? <span>{monatJahr(r.datum)}</span> : null}
+        {ortUndDatum && r.ort ? <span>{r.ort}</span> : null}
+        {ortUndDatum && r.datum ? <span>{monatJahr(r.datum)}</span> : null}
       </div>
       <Titel className="titel-3 mt-2 text-text-hell">
         <Link href={`/referenzen/${r.slug}`} className="after:absolute after:inset-0">
