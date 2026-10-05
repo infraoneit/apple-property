@@ -59,7 +59,7 @@
         "text": "Lassen Sie es uns gemeinsam umsetzen. Wir freuen uns auf Ihre Anfrage.",
         "knopf": {
           "text": "Anfrage senden",
-          "link": "/kontakt"
+          "link": "mailto:info@apple-group.ch"
         },
         "telefonZeigen": true
       }
